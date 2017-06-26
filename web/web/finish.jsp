@@ -37,9 +37,78 @@
 <div id="wrapper">
 
     <!-- Navigation -->
-    <%@include file="navbar.jsp"%>
+    <%@include file="navbar.jsp" %>
     <div id="page-wrapper">
-</div>
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="page-header">已完成订单</h4>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <!--<div class="panel-heading">-->
+
+                        <!--</div>-->
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">订单号</th>
+                                    <th class="text-center">车牌号</th>
+                                    <th class="text-center">客户姓名</th>
+                                    <th class="text-center">出车日期</th>
+                                    <th class="text-center">还车日期</th>
+                                    <th class="text-center">违章日期</th>
+                                    <th class="text-center">消费金额</th>
+                                    <th class="text-center">违章押金</th>
+                                    <th class="text-center">违章扣款</th>
+                                    <!--<th class="text-center">balabala</th>-->
+                                    <th class="text-center">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="odd gradeX">
+                                    <td class="text-center" id="order-no"><a href="./">18572398575</a></td>
+                                    <td class="text-center">皖N.1859395</td>
+                                    <td class="text-center">大头</td>
+                                    <td class="text-center">2017-06-22</td>
+                                    <td class="text-center">2017-06-22</td>
+                                    <td class="text-center">2017-06-22</td>
+                                    <td class="text-center">200</td>
+                                    <td class="text-center">200</td>
+                                    <td class="text-center">2022</td>
+                                    <td style="width: 100px">
+                                        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                                            <div class="btn-group" role="group">
+                                                <button type="button" class="btn btn-danger btn-sm" id="rent-finish"
+                                                       >
+                                                    查看</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!--<td style="width: 100px">-->
+                                    <!--<div class="btn-group btn-group-justified" role="group" aria-label="...">-->
+                                    <!--<div class="btn-group" role="group">-->
+                                    <!--<a type="button" class="btn btn-primary btn-sm " href="./check-out.html" >续租</a>-->
+                                    <!--<a type="button" class="btn btn-primary btn-sm " href="./check-out.html" >还车结算</a>-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash;<div class="btn-group" role="group">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<button type="button" class="btn btn-danger btn-sm">取消</button>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--</div>-->
+                                    <!--</td>-->
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="./vendor/jquery/jquery.min.js"></script>
 
