@@ -41,8 +41,9 @@
     <div id="page-wrapper">
         <div class="row" >
             <div class="col-md-4">
-
+                <h4 class="page-header">车辆信息</h4>
             </div>
+
         </div>
     </div>
 </div>

@@ -52,7 +52,7 @@
             <div class="col-md-3">
                 <div class="input-group">
                     <span class="input-group-addon" id="client-name">姓名</span>
-                    <input type="text" required="true" class="form-control" placeholder="姓名" aria-describedby="basic-addon1">
+                    <input type="text" required="true" class="form-control" placeholder="必填" aria-describedby="basic-addon1">
                 </div>
             </div>
             <div class="col-md-2">
@@ -70,13 +70,13 @@
             <div class="col-md-3">
                 <div class="input-group">
                     <span class="input-group-addon" id="ID-card">身份证号</span>
-                    <input type="text" required="true" maxlength="18" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                    <input type="text" required="true" maxlength="18" class="form-control" placeholder="必填" aria-describedby="basic-addon1">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="input-group">
                     <span class="input-group-addon" id="phone-number">手机号</span>
-                    <input type="text" required="true" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                    <input type="text" required="true" class="form-control" placeholder="必填" aria-describedby="basic-addon1">
                 </div>
             </div>
             <div class="col-md-3">
@@ -91,13 +91,13 @@
             <div class="col-md-3">
                 <div class="input-group">
                     <span class="input-group-addon" id="address">地址</span>
-                    <input type="text" required="true" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                    <input type="text" required="true" class="form-control" placeholder="必填" aria-describedby="basic-addon1">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="input-group">
                     <span class="input-group-addon" id="post-code">邮编</span>
-                    <input type="number" required="true" min="100000" max="999999" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                    <input type="number" required="true" min="100000" max="999999" class="form-control" placeholder="必填" aria-describedby="basic-addon1">
                 </div>
             </div>
             <div class="col-md-3">
@@ -114,7 +114,7 @@
             <div class="col-md-3">
                 <div class="input-group">
                     <span class="input-group-addon" id="driver-license">驾驶证号</span>
-                    <input type="text" required="true" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                    <input type="text" required="true" class="form-control" placeholder="必填" aria-describedby="basic-addon1">
                 </div>
             </div>
             <div class="col-md-2" >
@@ -136,7 +136,7 @@
             <div class="col-md-2">
                 <div class="input-group">
                     <span class="input-group-addon" id="driver-time">驾龄</span>
-                    <input type="text" required="true" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                    <input type="text" required="true" class="form-control" placeholder="必填" aria-describedby="basic-addon1">
                 </div>
             </div>
         </div>
@@ -144,13 +144,13 @@
             <div class="col-md-4">
                 <div class="input-group">
                     <span class="input-group-addon" id="date-of-issue">发证日期</span>
-                    <input type="date" required="true" class="form-control" placeholder=" " aria-describedby="basic-addon1">
+                    <input type="date" required="true" class="form-control" placeholder="必填" aria-describedby="basic-addon1">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="input-group">
                     <span class="input-group-addon" id="data-of-invalid">失效日期</span>
-                    <input type="date" required="true" class="form-control" placeholder=" " aria-describedby="basic-addon1">
+                    <input type="date" required="true" class="form-control" placeholder="必填" aria-describedby="basic-addon1">
                 </div>
             </div>
         </div>
@@ -160,14 +160,14 @@
                 <div class="col-md-3">
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">车牌号</span>
-                        <input type="text" required="true" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                        <input type="text" required="true" class="form-control" placeholder="必填" aria-describedby="basic-addon1">
 
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="input-group">
                         <span class="input-group-addon" id="start_mile">开始里程</span>
-                        <input type="number" required="true" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                        <input type="number" required="true" class="form-control" placeholder="必填" aria-describedby="basic-addon1">
                         <span class="input-group-addon" id="basic-addon">公里</span>
                     </div>
                 </div>
