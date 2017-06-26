@@ -41,9 +41,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            预约信息
-                        </div>
+                        <%--<div class="panel-heading">--%>
+                            <%--预约信息--%>
+                        <%--</div>--%>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
 
@@ -64,11 +64,11 @@
                                     <td>Internet Explorer 4.0</td>
                                     <td>Win 95+</td>
                                     <td class="center">4</td>
-                                    <td style="width: 100px">
+                                    <td style="width: 150px">
                                         <div class="btn-group btn-group-justified" role="group" aria-label="...">
 
                                             <div class="btn-group" role="group">
-                                                <a type="button" class="btn btn-primary btn-sm text-center " href="client_information.html" >
+                                                <a type="button" class="btn btn-primary btn-sm text-center " href="./client_information.jsp" >
                                                     <i class="fa fa-shopping-cart" ></i>出车
                                                 </a>
                                             </div>
