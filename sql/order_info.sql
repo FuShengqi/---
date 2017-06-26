@@ -7,6 +7,7 @@ create table order_info
 	order_no char(8) NOT NULL,
 	car_id char(32) NOT NULL,
 	license_id char(32) NOT NULL,
+	customer_id char(32) NOT NULL,
 	customer_no char(6) NOT NULL,
 	order_start_date date,
 	return_date_in_plan date,
