@@ -1,8 +1,8 @@
 ## 注册
 /Customer/Register
-```json
+```
 {
-	CustomerNo:,
+    CustomerNo:,
     CustomerPassword:,
     CustomerName:,
     CustomerSex:,
@@ -17,7 +17,7 @@
     
 ```
 return
-```json
+```
 {
 	status:[success;fail]
 }
@@ -140,6 +140,7 @@ PostOrderInfo -ArrayList
 + 消费金额
 + 违章押金
 
+## violate.jsp _违章待处理订单_
 
 ### ArrayList
 + 订单号
