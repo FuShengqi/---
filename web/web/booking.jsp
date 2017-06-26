@@ -189,13 +189,13 @@
 </div>
 
 <!-- jQuery -->
-<script src="./WEB-INF/vendor/jquery/jquery.min.js"></script>
+<script src="./vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="./WEB-INF/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="./WEB-INF/vendor/metisMenu/metisMenu.min.js"></script>
+<script src="./vendor/metisMenu/metisMenu.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
 <script src="./dist/js/sb-admin-2.js"></script>
@@ -206,9 +206,9 @@
 <!-- Metis Menu Plugin JavaScript -->
 
 <!-- DataTables JavaScript -->
-<script src="./WEB-INF/vendor/datatables/js/jquery.dataTables.min.js"></script>
-<script src="./WEB-INF/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-<script src="./WEB-INF/vendor/datatables-responsive/dataTables.responsive.js"></script>
+<script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="./vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+<script src="./vendor/datatables-responsive/dataTables.responsive.js"></script>
 
 
 

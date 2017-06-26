@@ -16,7 +16,7 @@
 
     <!-- MetisMenu CSS -->
     <link href="./vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
+    <link href="./vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="./dist/css/sb-admin-2.css" rel="stylesheet">
 
@@ -72,15 +72,15 @@
                             </thead>
                             <tbody>
                             <tr class="odd gradeX">
-                                <td class="text-center" id="order-no"><a href="./">18572398575</a></td>
+                                <td class="text-center"><a href="./" class="order-no">18572398575</a></td>
                                 <td class="text-center">皖N.1859395</td>
                                 <td class="text-center">大头</td>
                                 <td class="text-center">2017-06-22</td>
                                 <td class="text-center">2017-06-22</td>
                                 <td class="text-center">2017-06-22</td>
                                 <td class="text-center">200</td>
-                                <td class="text-center">200</td>
-                                <td class="text-center">2022</td>
+                                <td class="text-center yaj">200</td>
+                                <td class="text-center kouk">2022</td>
                                 <td style="width: 100px">
                                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
                                         <div class="btn-group" role="group">
@@ -123,17 +123,17 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-1">
                         <div class="page-header">
-                            <b>订单号</b> <b id="order">847587</b>
+                            <b>订单号</b> <b id="orderNo"></b>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
-                                <b>违章押金:</b> <b>987</b>
+                                <b>违章押金:</b> <b id="yaj"></b>
                             </div>
                             <div class="col-md-4">
-                                <b>违章扣款:</b> <b>200</b>
+                                <b>违章扣款:</b> <b id="kouk"></b>
                             </div>
                             <div class="col-md-4">
-                                <b>退换押金:</b> <b>289</b>
+                                <b>退还押金:</b> <b id="tuik"></b>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -145,7 +145,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary">已退押金</button>
+                <button type="button" class="btn btn-primary" id="drawback">已退押金</button>
             </div>
         </div>
     </div>
@@ -162,18 +162,53 @@
 <script src="./dist/js/sb-admin-2.js"></script>
 
 <script>
-    $(function () {
-        $( "dialog" ).dialog( "close" );
-    })
-    $(".btn").click(function() {
-        var item = $(this).closest("tr")   // Finds the closest row <tr>
-            .find("a")
-            .text();         // Retrieves the text within <td>
 
-        console.log(item)
+    $('#myModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget)
+        console.log(button)
+        var orderNo = button.closest('tr')
+            .find('.order-no')
+            .text()
+        var yaj = button.closest('tr')
+            .find('.yaj')
+            .text()
+        var kouk = button.closest('tr')
+            .find('.kouk')
+            .text()
+        var modal = $(this)
+        modal.find('#orderNo').text(orderNo)
+        modal.find('#yaj').text(yaj)
+        modal.find('#kouk').text(kouk)
+        modal.find('#tuik').text(yaj - kouk)
+
+    })
+
+    $("#drawback").click(function () {
+        $.post(
+            "./",
+            {},
+            function () {
+                alert("退款成功");
+                $('#myModal').modal('hide')
+            },
+            "json"
+        )
+
+        console.log('fuck')
     });
 </script>
 
 </body>
+<!-- DataTables JavaScript -->
+<script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="./vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+<script src="./vendor/datatables-responsive/dataTables.responsive.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+</script>
 
 </html>
