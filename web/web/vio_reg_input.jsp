@@ -40,6 +40,54 @@
     <%@include file="navbar.jsp"%>
 
     <div id="page-wrapper">
+        <div class="row page-header">
+            <h4>违章信息录入</h4>
+        </div>
+        <form>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">车牌</span>
+                        <input type="text" required="true" name="carNo" maxlength="18" class="form-control"
+                               placeholder="必填" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">违章时间</span>
+                        <input type="date" required="true" name="violateDate" maxlength="18" class="form-control"
+                               placeholder="必填" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">违章事件</span>
+                        <input type="text" required="true" name="violateEvent" maxlength="18" class="form-control"
+                               placeholder="必填" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">扣分</span>
+                        <input type="number" name="violateMarks" min="0" required="true" maxlength="18"
+                               class="form-control" placeholder="必填" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 10px">
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">违章罚款</span>
+                        <input type="number" name="violateFee" required="true" maxlength="18" class="form-control"
+                               placeholder="必填" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-1 col-md-offset-11">
+                <button type="submit" class="btn btn-primary">录入</button>
+            </div>
+        </form>
 </div>
 </div>
 <script src="./vendor/jquery/jquery.min.js"></script>

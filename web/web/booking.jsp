@@ -1,3 +1,5 @@
+<%@ taglib prefix="c"
+           uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
@@ -42,7 +44,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <%--<div class="panel-heading">--%>
-                            <%--预约信息--%>
+                        <%--预约信息--%>
                         <%--</div>--%>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -60,123 +62,58 @@
                                 </thead>
                                 <tbody>
                                 <tr class="odd gradeX">
-                                    <td class="text-center"><a href="check-out.html">7435y6273642</a></td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td class="center">4</td>
-                                    <td style="width: 150px">
-                                        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                                    <c:forEach var="item" items="${list}">
+                                        <td class="text-center"><a href="./check-out.jsp?orderNo=" + <c:out
+                                                value="${item.orderNo}"/> >
+                                            <c:out value="${item.orderNo}"/>
+                                        </a></td>
+                                        <td>
+                                            <c:out value="${item.customerName}"/>
+                                        </td>
+                                        <td>
+                                            <c:out value="${item.customerTel}"/>
+                                        </td>
+                                        <td>
+                                            <c:out value="${item.orderStartD}"/>
+                                        </td>
+                                        <td style="width: 150px">
+                                            <div class="btn-group btn-group-justified" role="group" aria-label="...">
 
-                                            <div class="btn-group" role="group">
-                                                <a type="button" class="btn btn-primary btn-sm text-center " href="./client_information.jsp" >
-                                                    <i class="fa fa-shopping-cart" ></i>出车
-                                                </a>
+                                                <div class="btn-group" role="group">
+                                                    <a type="button" class="btn btn-primary btn-sm text-center "
+                                                       href="./client_information.jsp">
+                                                        <i class="fa fa-shopping-cart"></i>出车
+                                                    </a>
+                                                </div>
+                                                <div class="btn-group" role="group">
+                                                    <a type="button" class="btn btn-danger btn-sm text-center">
+                                                        <i class="fa fa-trash"></i>取消</a>
+                                                </div>
                                             </div>
-                                            <div class="btn-group" role="group">
-                                                <a type="button" class="btn btn-danger btn-sm text-center">
-                                                    <i class="fa fa-trash"></i>取消</a>
-                                            </div>
-                                        </div>
-                                    </td>
+                                        </td>
+                                    </c:forEach>
                                 </tr>
-                                <tr class="even gradeC">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0</td>
-                                    <td>Win 95+</td>
-                                    <td class="center">5</td>
-                                    <td class="center">C</td>
-                                </tr>
-                                <tr class="even gradeC">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0</td>
-                                    <td>Win 95+</td>
-                                    <td class="center">5</td>
-                                    <td class="center">C</td>
-                                </tr>
-                                <tr class="even gradeC">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0</td>
-                                    <td>Win 95+</td>
-                                    <td class="center">5</td>
-                                    <td class="center">C</td>
-                                </tr>
-                                <tr class="even gradeC">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0</td>
-                                    <td>Win 95+</td>
-                                    <td class="center">5</td>
-                                    <td class="center">C</td>
-                                </tr>
-                                <tr class="even gradeC">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0</td>
-                                    <td>Win 95+</td>
-                                    <td class="center">5</td>
-                                    <td class="center">C</td>
-                                </tr><tr class="even gradeC">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0</td>
-                                    <td>Win 95+</td>
-                                    <td class="center">5</td>
-                                    <td class="center">C</td>
-                                </tr>
-                                <tr class="even gradeC">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0</td>
-                                    <td>Win 95+</td>
-                                    <td class="center">5</td>
-                                    <td class="center">C</td>
-                                </tr>
-                                <tr class="even gradeC">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0</td>
-                                    <td>Win 95+</td>
-                                    <td class="center">5</td>
-                                    <td class="center">C</td>
-                                </tr>
-                                <tr class="even gradeC">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0</td>
-                                    <td>Win 95+</td>
-                                    <td class="center">5</td>
-                                    <td class="center">C</td>
-                                </tr>
-                                <tr class="even gradeC">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0</td>
-                                    <td>Win 95+</td>
-                                    <td class="center">5</td>
-                                    <td class="center">C</td>
-                                </tr>
-                                <tr class="even gradeC">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0</td>
-                                    <td>Win 95+</td>
-                                    <td class="center">5</td>
-                                    <td class="center">C</td>
-                                </tr>
+                                <%--<tr class="odd gradeX">--%>
+                                <%--<td class="text-center"><a href="check-out.html">7435y6273642</a></td>--%>
+                                <%--<td>Internet Explorer 4.0</td>--%>
+                                <%--<td>Win 95+</td>--%>
+                                <%--<td class="center">4</td>--%>
+                                <%--<td style="width: 150px">--%>
+                                <%--<div class="btn-group btn-group-justified" role="group" aria-label="...">--%>
 
-                                <tr class="odd gradeA">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.5</td>
-                                    <td>Win 95+</td>
-                                    <td class="center">5.5</td>
-                                    <td class="center">A</td>
-                                </tr>
-                                <tr class="even gradeA">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 6</td>
-                                    <td>Win 98+</td>
-                                    <td class="center">6</td>
-                                    <td class="center">A</td>
-                                </tr>
-                                <tr class="odd gradeA">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 7</td>
-                                    <td>Win XP SP2+</td>
-                                    <td class="center">7</td>
-                                    <td class="center">A</td>
-                                </tr>
+                                <%--<div class="btn-group" role="group">--%>
+                                <%--<a type="button" class="btn btn-primary btn-sm text-center " href="./client_information.jsp" >--%>
+                                <%--<i class="fa fa-shopping-cart" ></i>出车--%>
+                                <%--</a>--%>
+                                <%--</div>--%>
+                                <%--<div class="btn-group" role="group">--%>
+                                <%--<a type="button" class="btn btn-danger btn-sm text-center">--%>
+                                <%--<i class="fa fa-trash"></i>取消</a>--%>
+                                <%--</div>--%>
+                                <%--</div>--%>
+                                <%--</td>--%>
+                                <%--</tr>--%>
+
                                 </tbody>
                             </table>
                         </div>
@@ -209,7 +146,6 @@
 <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
 <script src="./vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
 <script src="./vendor/datatables-responsive/dataTables.responsive.js"></script>
-
 
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
