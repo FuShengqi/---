@@ -43,12 +43,13 @@
                 <h4 class="page-header">用户信息</h4>
             </div>
         </div>
-        <form action="/action_page.php">
+        <form method="post" id="subForm">
             <div class="row" >
                 <div class="col-md-3">
                     <div class="input-group">
                         <span class="input-group-addon" id="client-series">客户编号</span>
-                        <input type="text" required="true" class="form-control" value="S19357840" aria-describedby="basic-addon1">
+                        <input type="text" required="true" name="client-series" class="form-control" value="S19357840"
+                               aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -179,7 +180,7 @@
             <hr />
             <div class="row">
                 <div class="col-md-4 col-md-offset-9">
-                    <button type="button submit" class="btn btn-primary" style="margin: 10px">出车</button>
+                    <button type="button" id="postData" class="btn btn-primary" style="margin: 10px">出车</button>
 
                     <a type="button" class="btn btn-danger" href="booking.html">取消</a>
                 </div>
@@ -200,4 +201,42 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="./dist/js/sb-admin-2.js"></script>
+
+<script>
+    $('#postData').click(function () {
+        var data = $('#subForm').serializeArray()
+        $.ajax({
+            type: "POST",
+            url: "./Customer/Register",
+            data: data,
+            async: false,
+            contentType: "application/json; charset=utf-8",
+            dataType: "text",
+            success: function (dataVal) {
+                if (dataVal == 1) {
+                    alert("出车成功")
+                } else {
+                    alert("操作失败")
+                }
+            },
+            error: function () {
+                alert("操作失败")
+            }
+        })
+//        $.post(
+//            {
+//                url: './client_infor',
+//                async: false,
+//                data: data,
+//                success: function () {
+//
+//                },
+//                fail: function () {
+//
+//                },
+//                dataType: "json"
+//            }
+//        )
+    })
+</script>
 </html>

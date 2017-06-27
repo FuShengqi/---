@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1cab4f79-2bdb-42cb-b7ff-fd4148813b55" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/client_information.jsp" afterPath="$PROJECT_DIR$/web/client_information.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/renting.jsp" afterPath="$PROJECT_DIR$/web/renting.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,8 +52,8 @@
       <file leaf-file-name="client_information.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/client_information.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="179" column="29" lean-forward="true" selection-start-line="179" selection-start-column="29" selection-end-line="179" selection-end-column="29" />
+            <state relative-caret-position="133">
+              <caret line="208" column="39" lean-forward="true" selection-start-line="208" selection-start-column="39" selection-end-line="208" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -60,7 +62,7 @@
       <file leaf-file-name="add_car.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/add_car.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
+            <state relative-caret-position="150">
               <caret line="117" column="26" lean-forward="true" selection-start-line="112" selection-start-column="20" selection-end-line="117" selection-end-column="26" />
               <folding />
             </state>
@@ -81,9 +83,9 @@
         <entry file="file://$PROJECT_DIR$/web/renting.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="130">
-              <caret line="104" column="55" lean-forward="false" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="77" />
+              <caret line="238" column="22" lean-forward="true" selection-start-line="238" selection-start-column="22" selection-end-line="238" selection-end-column="22" />
               <folding>
-                <marker date="1498530275668" expanded="false" signature="6043:6055" ph="..." />
+                <marker date="1498532511791" expanded="false" signature="6043:6055" ph="..." />
               </folding>
             </state>
           </provider>
@@ -165,12 +167,12 @@
         <option value="$PROJECT_DIR$/web/finish.jsp" />
         <option value="$PROJECT_DIR$/web/vio_reg_input.jsp" />
         <option value="$PROJECT_DIR$/web/violate.jsp" />
-        <option value="$PROJECT_DIR$/web/renting.jsp" />
         <option value="$PROJECT_DIR$/web/back.jsp" />
         <option value="$PROJECT_DIR$/web/booking.jsp" />
         <option value="$PROJECT_DIR$/web/login-reg.jsp" />
         <option value="$PROJECT_DIR$/web/ava_car.jsp" />
         <option value="$PROJECT_DIR$/web/car_information.jsp" />
+        <option value="$PROJECT_DIR$/web/renting.jsp" />
         <option value="$PROJECT_DIR$/web/client_information.jsp" />
       </list>
     </option>
@@ -817,7 +819,7 @@
       <workItem from="1498461128327" duration="2888000" />
       <workItem from="1498464043667" duration="10566000" />
       <workItem from="1498485567497" duration="11403000" />
-      <workItem from="1498522743216" duration="7290000" />
+      <workItem from="1498522743216" duration="9846000" />
     </task>
     <task id="LOCAL-00001" summary="t">
       <created>1498461229998</created>
@@ -861,11 +863,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498530281446</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="change to jstl tag">
+      <created>1498530286035</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1498530286035</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32147000" />
+    <option name="totallyTimeSpent" value="34703000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="36" width="1366" height="732" extended-state="6" />
@@ -1005,7 +1014,7 @@
         <state relative-caret-position="3519">
           <caret line="207" column="14" lean-forward="true" selection-start-line="204" selection-start-column="12" selection-end-line="207" selection-end-column="14" />
           <folding>
-            <marker date="1498530275668" expanded="false" signature="6043:6055" ph="..." />
+            <marker date="1498532511791" expanded="false" signature="6043:6055" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1049,6 +1058,7 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="1921">
             <caret line="113" column="5" lean-forward="true" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1117,7 +1127,7 @@
         <state relative-caret-position="1309">
           <caret line="77" column="52" lean-forward="false" selection-start-line="77" selection-start-column="52" selection-end-line="77" selection-end-column="52" />
           <folding>
-            <marker date="1498530275668" expanded="false" signature="6043:6055" ph="..." />
+            <marker date="1498532511791" expanded="false" signature="6043:6055" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1228,6 +1238,7 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="1921">
             <caret line="113" column="5" lean-forward="false" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1309,24 +1320,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/ava_car.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="91" column="42" lean-forward="false" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/renting.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="104" column="55" lean-forward="false" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="77" />
-          <folding>
-            <marker date="1498530275668" expanded="false" signature="6043:6055" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/car_information.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="487">
@@ -1343,14 +1336,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/add_car.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="117" column="26" lean-forward="true" selection-start-line="112" selection-start-column="20" selection-end-line="117" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/booking.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1006">
@@ -1361,10 +1346,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/ava_car.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="91" column="42" lean-forward="false" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/add_car.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="117" column="26" lean-forward="true" selection-start-line="112" selection-start-column="20" selection-end-line="117" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/renting.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="238" column="22" lean-forward="true" selection-start-line="238" selection-start-column="22" selection-end-line="238" selection-end-column="22" />
+          <folding>
+            <marker date="1498532511791" expanded="false" signature="6043:6055" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/client_information.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="179" column="29" lean-forward="true" selection-start-line="179" selection-start-column="29" selection-end-line="179" selection-end-column="29" />
+        <state relative-caret-position="133">
+          <caret line="208" column="39" lean-forward="true" selection-start-line="208" selection-start-column="39" selection-end-line="208" selection-end-column="39" />
           <folding />
         </state>
       </provider>

@@ -234,19 +234,42 @@
     $('#xuzu').click(function () {
 //        console.log($(this))
         console.log($(this).parent().parent().find('#orderNo').text());
-        $.post(
-            "./",
-            {
+        $.ajax({
+            type: "POST",
+            url: "./",
+            data: {
                 orderId: $(this).parent().parent().find('#orderNo').text(),
                 renewalEndDate: $(this).parent().parent().find('#user_date').text(),
                 recordCreator: "ADMIN"
             },
-            function () {
-                alert("续租成功");
-                $('#myModal').modal('hide')
+            async: false,
+            contentType: "application/json; charset=utf-8",
+            dataType: "text",
+            success: function (dataVal) {
+                if (dataVal == 1) {
+                    alert("出车成功")
+                    $('#myModal').modal('hide')
+                } else {
+                    alert("操作失败")
+                }
             },
-            "json"
-        )
+            error: function () {
+                alert("操作失败")
+            }
+        })
+//        $.post(
+//            : "./",
+//            data: {
+//                orderId: $(this).parent().parent().find('#orderNo').text(),
+//                renewalEndDate: $(this).parent().parent().find('#user_date').text(),
+//                recordCreator: "ADMIN"
+//            },
+//            function () {
+//                alert("续租成功");
+//                $('#myModal').modal('hide')
+//            },
+//            "json"
+//        )
     })
     $('.returnCar').click(function () {
         window.location.href = "./check-out.jsp?orderNo=" + $(this).closest("tr")
