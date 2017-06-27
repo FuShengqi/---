@@ -47,11 +47,15 @@ return
 ```
 
 ## 出车
+1. 预约订单出车  ajax post {orderNo}->
 /
 ```
 Form
 
 ```
+2. 老用户未预约出车 ajax post carNo -> 回传carInformation表单 ->填写用户编号 -> post
+
+3. 新用户未预约出车 ajax post carNo -> 回传表单 ->提交用户,车辆信息
 ## 还车
 /
 ```
