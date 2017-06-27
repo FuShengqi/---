@@ -1,42 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1cab4f79-2bdb-42cb-b7ff-fd4148813b55" name="Default" comment="all jobs done">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/orderDetail.jsp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/login-reg.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/css/font-awesome.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/less/extras.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/less/spinning.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/scss/_extras.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/scss/_spinning.scss" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/web/vendor/font-awesome/fonts/FontAwesome.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/web/vendor/font-awesome/fonts/fontawesome-webfont.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/web/vendor/font-awesome/fonts/fontawesome-webfont.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/web/vendor/font-awesome/fonts/fontawesome-webfont.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/web/vendor/font-awesome/fonts/fontawesome-webfont.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="1cab4f79-2bdb-42cb-b7ff-fd4148813b55" name="Default" comment="fix bugs">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/account-rent.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/dist/css/login.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/add_car.jsp" afterPath="$PROJECT_DIR$/web/add_car.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/ava_car.jsp" afterPath="$PROJECT_DIR$/web/ava_car.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/back.jsp" afterPath="$PROJECT_DIR$/web/back.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/booking.jsp" afterPath="$PROJECT_DIR$/web/booking.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/car_information.jsp" afterPath="$PROJECT_DIR$/web/car_information.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/car_management.jsp" afterPath="$PROJECT_DIR$/web/car_management.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/check-out.jsp" afterPath="$PROJECT_DIR$/web/check-out.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/client_information.jsp" afterPath="$PROJECT_DIR$/web/client_information.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/finish.jsp" afterPath="$PROJECT_DIR$/web/finish.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/renting.jsp" afterPath="$PROJECT_DIR$/web/renting.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/web/vendor/font-awesome/css/font-awesome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/web/vendor/font-awesome/css/font-awesome.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/web/vendor/font-awesome/fonts/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/less/font-awesome.less" afterPath="$PROJECT_DIR$/web/vendor/font-awesome/less/font-awesome.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/less/icons.less" afterPath="$PROJECT_DIR$/web/vendor/font-awesome/less/icons.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/less/variables.less" afterPath="$PROJECT_DIR$/web/vendor/font-awesome/less/variables.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/scss/_icons.scss" afterPath="$PROJECT_DIR$/web/vendor/font-awesome/scss/_icons.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/scss/_variables.scss" afterPath="$PROJECT_DIR$/web/vendor/font-awesome/scss/_variables.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/vendor/font-awesome/scss/font-awesome.scss" afterPath="$PROJECT_DIR$/web/vendor/font-awesome/scss/font-awesome.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/login.jsp" afterPath="$PROJECT_DIR$/web/login.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/register.jsp" afterPath="$PROJECT_DIR$/web/register.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/vio_reg_input.jsp" afterPath="$PROJECT_DIR$/web/vio_reg_input.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/violate.jsp" afterPath="$PROJECT_DIR$/web/violate.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,16 +20,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="car_information.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/car_information.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="154" column="7" lean-forward="false" selection-start-line="154" selection-start-column="7" selection-end-line="154" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="car_management.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/car_management.jsp">
           <provider selected="true" editor-type-id="text-editor">
@@ -69,25 +30,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_car.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/add_car.jsp">
+      <file leaf-file-name="vio_reg_input.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/vio_reg_input.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="108" column="29" lean-forward="false" selection-start-line="108" selection-start-column="29" selection-end-line="108" selection-end-column="29" />
+            <state relative-caret-position="441">
+              <caret line="87" column="38" lean-forward="false" selection-start-line="87" selection-start-column="38" selection-end-line="87" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/login.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="75" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="75" />
               <folding>
-                <element signature="n#style#0;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vio_reg_input.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/vio_reg_input.jsp">
+      <file leaf-file-name="register.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/register.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-322">
-              <caret line="80" column="81" lean-forward="false" selection-start-line="80" selection-start-column="81" selection-end-line="80" selection-end-column="81" />
-              <folding />
+            <state relative-caret-position="618">
+              <caret line="66" column="68" lean-forward="false" selection-start-line="66" selection-start-column="68" selection-end-line="66" selection-end-column="68" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,8 +68,8 @@
       <file leaf-file-name="renting.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/renting.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="272" column="7" lean-forward="false" selection-start-line="272" selection-start-column="7" selection-end-line="272" selection-end-column="7" />
+            <state relative-caret-position="340">
+              <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="75" />
               <folding>
                 <marker date="1498580055342" expanded="false" signature="6039:6051" ph="..." />
               </folding>
@@ -104,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fontawesome-webfont.svg" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fontawesome-webfont.svg" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/vendor/font-awesome/fonts/fontawesome-webfont.svg">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="2669" column="6" lean-forward="false" selection-start-line="2669" selection-start-column="6" selection-end-line="2669" selection-end-column="6" />
+            <state relative-caret-position="774">
+              <caret line="2757" column="14" lean-forward="false" selection-start-line="2757" selection-start-column="14" selection-end-line="2757" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -172,6 +145,7 @@
       <find>a</find>
       <find>dialog</find>
       <find>car-rent-press</find>
+      <find>bootstrap.min.css</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -207,7 +181,6 @@
         <option value="$PROJECT_DIR$/web/ava_car.jsp" />
         <option value="$PROJECT_DIR$/web/client_information.jsp" />
         <option value="$PROJECT_DIR$/web/add_car.jsp" />
-        <option value="$PROJECT_DIR$/web/vio_reg_input.jsp" />
         <option value="$PROJECT_DIR$/web/car_information.jsp" />
         <option value="$PROJECT_DIR$/web/car_management.jsp" />
         <option value="$PROJECT_DIR$/web/check-out.jsp" />
@@ -215,6 +188,9 @@
         <option value="$PROJECT_DIR$/web/finish.jsp" />
         <option value="$PROJECT_DIR$/web/renting.jsp" />
         <option value="$PROJECT_DIR$/web/vendor/font-awesome/fonts/fontawesome-webfont.svg" />
+        <option value="$PROJECT_DIR$/web/vio_reg_input.jsp" />
+        <option value="$PROJECT_DIR$/web/login.jsp" />
+        <option value="$PROJECT_DIR$/web/register.jsp" />
       </list>
     </option>
   </component>
@@ -927,7 +903,7 @@
       <workItem from="1498464043667" duration="10566000" />
       <workItem from="1498485567497" duration="11403000" />
       <workItem from="1498522743216" duration="11803000" />
-      <workItem from="1498555127068" duration="22260000" />
+      <workItem from="1498555127068" duration="23915000" />
     </task>
     <task id="LOCAL-00001" summary="t">
       <created>1498461229998</created>
@@ -985,26 +961,32 @@
       <option name="project" value="LOCAL" />
       <updated>1498532860184</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="all jobs done">
+      <created>1498580280197</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1498580280197</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58920000" />
+    <option name="totallyTimeSpent" value="60575000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1920" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961783" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24203822" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2410148" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20520833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1032,11 +1014,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="t" />
     <MESSAGE value="add jstl" />
-    <MESSAGE value="fix bugs" />
     <MESSAGE value="change to jstl tag" />
     <MESSAGE value="fix bugs;add ajax methods" />
     <MESSAGE value="all jobs done" />
-    <option name="LAST_COMMIT_MESSAGE" value="all jobs done" />
+    <MESSAGE value="fix bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1058,16 +1040,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/violate.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3417">
-          <caret line="201" column="0" lean-forward="false" selection-start-line="201" selection-start-column="0" selection-end-line="211" selection-end-column="9" />
-          <folding>
-            <marker date="1498580058594" expanded="false" signature="6761:6773" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/back.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1294,14 +1266,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="53" lean-forward="false" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1373,9 +1337,9 @@
           <folding>
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1498578817969" expanded="true" signature="7735:7742" ph="×" />
-            <marker date="1498578817969" expanded="true" signature="8136:8143" ph="×" />
-            <marker date="1498578817969" expanded="true" signature="8560:8567" ph="×" />
+            <marker date="1498581881064" expanded="true" signature="7889:7896" ph="×" />
+            <marker date="1498581881064" expanded="true" signature="8298:8305" ph="×" />
+            <marker date="1498581881064" expanded="true" signature="8722:8729" ph="×" />
           </folding>
         </state>
       </provider>
@@ -1432,14 +1396,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/vio_reg_input.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-322">
-          <caret line="80" column="81" lean-forward="false" selection-start-line="80" selection-start-column="81" selection-end-line="80" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/car_information.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
@@ -1482,16 +1438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/renting.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="272" column="7" lean-forward="false" selection-start-line="272" selection-start-column="7" selection-end-line="272" selection-end-column="7" />
-          <folding>
-            <marker date="1498580055342" expanded="false" signature="6039:6051" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -1502,9 +1448,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/vendor/font-awesome/fonts/fontawesome-webfont.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="2669" column="6" lean-forward="false" selection-start-line="2669" selection-start-column="6" selection-end-line="2669" selection-end-column="6" />
+        <state relative-caret-position="774">
+          <caret line="2757" column="14" lean-forward="false" selection-start-line="2757" selection-start-column="14" selection-end-line="2757" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/vio_reg_input.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="87" column="38" lean-forward="false" selection-start-line="87" selection-start-column="38" selection-end-line="87" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/renting.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="75" />
+          <folding>
+            <marker date="1498580055342" expanded="false" signature="6039:6051" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="75" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="75" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="66" column="68" lean-forward="false" selection-start-line="66" selection-start-column="68" selection-end-line="66" selection-end-column="68" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

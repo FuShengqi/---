@@ -84,8 +84,8 @@
                 </div>
 
             </div>
-            <div class="col-md-1 col-md-offset-11">
-                <a class="btn btn-primary" id="infor-submit">录入</a>
+            <div class="col-md-1 col-md-offset-5">
+                <a class="btn btn-info" id="infor-submit">录入</a>
             </div>
         </form>
 </div>
