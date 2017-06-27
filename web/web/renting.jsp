@@ -75,40 +75,41 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="odd gradeX">
-                                    <c:forEach var="item" items="${list}">
-                                    <td class="text-center"><a href="./check-out.jsp?orderNo=" + <c:out
-                                            value="${item.orderNo}"/> >
-                                        <c:out value="${item.orderNo}"/>
-                                    </a>
-                                    </td>
-                                    <td class="text-center carNo">
-                                        <c:out value="${item.carId}"/>
-                                    </td>
-                                    <td class="text-center clientName">
-                                        <c:out value="${item.customerName}"/>
-                                    </td>
-                                    <td class="text-center startTime">
-                                        <c:out value="${item.orderStartD}"/>
-                                    </td>
-                                    <td class="text-center">
-                                        <c:out value="${item.orderPEndID}"/>
-                                    </td>
-                                    <td class="text-center">
-                                        <c:out value="${item.orderDeposit}"/>
-                                    </td>
-                                    <td style="width: 150px">
-                                        <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                                            <div class="btn-group" role="group">
-                                                <a type="button" class="btn btn-primary btn-sm " data-toggle="modal"
-                                                   data-target="#myModal">续租</a>
+                                <c:forEach var="item" items="${list}">
+                                    <tr class="odd gradeX">
+
+                                        <td class="text-center"><a href="./check-out.jsp?orderNo=<c:out
+                                                value="${item.orderNo}"/>">
+                                            <c:out value="${item.orderNo}"/>
+                                        </a>
+                                        </td>
+                                        <td class="text-center carNo">
+                                            <c:out value="${item.carId}"/>
+                                        </td>
+                                        <td class="text-center clientName">
+                                            <c:out value="${item.customerName}"/>
+                                        </td>
+                                        <td class="text-center startTime">
+                                            <c:out value="${item.orderStartD}"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <c:out value="${item.orderPEndID}"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <c:out value="${item.orderDeposit}"/>
+                                        </td>
+                                        <td style="width: 150px">
+                                            <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                                                <div class="btn-group" role="group">
+                                                    <a type="button" class="btn btn-primary btn-sm " data-toggle="modal"
+                                                       data-target="#myModal">续租</a>
+                                                </div>
+                                                <div class="btn-group" role="group">
+                                                    <a type="button" class="btn btn-danger btn-sm returnCar">还车</a>
+                                                </div>
                                             </div>
-                                            <div class="btn-group" role="group">
-                                                <a type="button" class="btn btn-danger btn-sm returnCar">还车</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
                                 </c:forEach>
                                 <%--<tr class="odd gradeX">--%>
                                 <%--<td class="text-center"><a href="./" name="orderNo">18572398575</a></td>--%>
@@ -165,7 +166,7 @@
                             <div class="col-md-6">
                                 <div class="input-group input-group-sm">
                                     <span class="input-group-addon" id="basic-addon1">续租到</span>
-                                    <input required="true" type="date" class="form-control" id="user_date"/>
+                                    <input required="required" type="date" class="form-control" id="user_date"/>
                                 </div>
                             </div>
 
@@ -204,7 +205,7 @@
 <script src="./vendor/datatables-responsive/dataTables.responsive.js"></script>
 <script>
     $('#myModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget) // Button that triggered the modal
+        var button = $(event.relatedTarget); // Button that triggered the modal
 
         // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
@@ -215,15 +216,15 @@
             .text();
         var carNo = button.closest("tr")
             .find(".carNo")
-            .text()
+            .text();
         var clientName = button.closest('tr')
             .find(".clientName")
-            .text()
-        console.log(carNo)
-        var modal = $(this)
+            .text();
+        console.log(carNo);
+        var modal = $(this);
         modal.find('.modal-title').text('订单 ' + orderNo + ' 续租');
         modal.find('.modal-body')
-            .find('#clientName').text(clientName)
+            .find('#clientName').text(clientName);
         modal.find('.modal-body')
             .find('#carNo')
             .text(carNo)
@@ -233,20 +234,43 @@
     $('#xuzu').click(function () {
 //        console.log($(this))
         console.log($(this).parent().parent().find('#orderNo').text());
-        $.post(
-            "./",
-            {
+        $.ajax({
+            type: "POST",
+            url: "./",
+            data: {
                 orderId: $(this).parent().parent().find('#orderNo').text(),
                 renewalEndDate: $(this).parent().parent().find('#user_date').text(),
                 recordCreator: "ADMIN"
             },
-            function () {
-                alert("续租成功");
-                $('#myModal').modal('hide')
+            async: false,
+            contentType: "application/json; charset=utf-8",
+            dataType: "text",
+            success: function (dataVal) {
+                if (dataVal == 1) {
+                    alert("续租成功");
+                    $('#myModal').modal('hide')
+                } else {
+                    alert("操作失败")
+                }
             },
-            "json"
-        )
-    })
+            error: function () {
+                alert("操作失败")
+            }
+        })
+//        $.post(
+//            : "./",
+//            data: {
+//                orderId: $(this).parent().parent().find('#orderNo').text(),
+//                renewalEndDate: $(this).parent().parent().find('#user_date').text(),
+//                recordCreator: "ADMIN"
+//            },
+//            function () {
+//                alert("续租成功");
+//                $('#myModal').modal('hide')
+//            },
+//            "json"
+//        )
+    });
     $('.returnCar').click(function () {
         window.location.href = "./check-out.jsp?orderNo=" + $(this).closest("tr")
                 .find("a")

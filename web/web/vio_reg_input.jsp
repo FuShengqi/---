@@ -43,33 +43,33 @@
         <div class="row page-header">
             <h4>违章信息录入</h4>
         </div>
-        <form>
+        <form id="vio-form">
             <div class="row">
                 <div class="col-md-3">
                     <div class="input-group">
                         <span class="input-group-addon">车牌</span>
-                        <input type="text" required="true" name="carNo" maxlength="18" class="form-control"
+                        <input type="text" required="required" name="carNo" maxlength="18" class="form-control"
                                placeholder="必填" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="input-group">
                         <span class="input-group-addon">违章时间</span>
-                        <input type="date" required="true" name="violateDate" maxlength="18" class="form-control"
+                        <input type="date" required="required" name="violateDate" maxlength="18" class="form-control"
                                placeholder="必填" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="input-group">
                         <span class="input-group-addon">违章事件</span>
-                        <input type="text" required="true" name="violateEvent" maxlength="18" class="form-control"
+                        <input type="text" required="required" name="violateEvent" maxlength="18" class="form-control"
                                placeholder="必填" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="input-group">
                         <span class="input-group-addon">扣分</span>
-                        <input type="number" name="violateMarks" min="0" required="true" maxlength="18"
+                        <input type="number" name="violateMarks" min="0" required="required" maxlength="18"
                                class="form-control" placeholder="必填" aria-describedby="basic-addon1">
                     </div>
                 </div>
@@ -78,14 +78,14 @@
                 <div class="col-md-3">
                     <div class="input-group">
                         <span class="input-group-addon">违章罚款</span>
-                        <input type="number" name="violateFee" required="true" maxlength="18" class="form-control"
+                        <input type="number" name="violateFee" required="required" maxlength="18" class="form-control"
                                placeholder="必填" aria-describedby="basic-addon1">
                     </div>
                 </div>
 
             </div>
-            <div class="col-md-1 col-md-offset-11">
-                <button type="submit" class="btn btn-primary">录入</button>
+            <div class="col-md-1 col-md-offset-5">
+                <a class="btn btn-info" id="infor-submit">录入</a>
             </div>
         </form>
 </div>
@@ -100,7 +100,29 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="./dist/js/sb-admin-2.js"></script>
-
+<script>
+    $('#infor-submit').click(function () {
+        var data = $('#vio-form').serializeArray()
+        $.ajax({
+            type: "POST",
+            url: "./",
+            data: data,
+            async: false,
+            contentType: "application/json; charset=utf-8",
+            dataType: "text",
+            success: function (dataVal) {
+                if (dataVal == 1) {
+                    alert("录入成功")
+                } else {
+                    alert("录入失败,请重试")
+                }
+            },
+            error: function () {
+                alert("录入失败,请重试")
+            }
+        })
+    })
+</script>
 </body>
 
 </html>
