@@ -1,7 +1,16 @@
 <%@ taglib prefix="c"
            uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
+<%
+    ArrayList list = new ArrayList();
+    Map<String, String> dic = new HashMap<String, String>();
+    dic.put("orderNo", "7236752553");
+    dic.put("orderStartD", "2016-67-90");
+
+    list.add(dic);
+%>
 <html lang="zh-cmn-Hans">
 <head>
     <meta charset="UTF-8">
@@ -64,8 +73,8 @@
                                 <c:forEach var="item" items="${list}">
                                 <tr class="odd gradeX">
 
-                                    <td class="text-center"><a href="./check-out.jsp?orderNo=" + <c:out
-                                                value="${item.orderNo}"/> >
+                                    <td class="text-center"><a class="orderNoo" href="./check-out.jsp?orderNo=<c:out
+                                                value="${item.orderNo}"/>">
                                             <c:out value="${item.orderNo}"/>
                                         </a></td>
                                         <td>
@@ -81,8 +90,9 @@
                                             <div class="btn-group btn-group-justified" role="group" aria-label="...">
 
                                                 <div class="btn-group" role="group">
-                                                    <a type="button" class="btn btn-primary btn-sm text-center "
-                                                       href="./client_information.jsp">
+                                                    <a type="button"
+                                                       class="btn btn-primary btn-sm text-center car-rent-press"
+                                                       href="./client_information.jsp?orderNo=<c:out value="${item.orderNo}"/>">
                                                         <i class="fa fa-shopping-cart"></i>出车
                                                     </a>
                                                 </div>
@@ -94,26 +104,29 @@
                                         </td>
                                     </c:forEach>
                                 </tr>
-                                <%--<tr class="odd gradeX">--%>
-                                <%--<td class="text-center"><a href="check-out.html">7435y6273642</a></td>--%>
-                                <%--<td>Internet Explorer 4.0</td>--%>
-                                <%--<td>Win 95+</td>--%>
-                                <%--<td class="center">4</td>--%>
-                                <%--<td style="width: 150px">--%>
-                                <%--<div class="btn-group btn-group-justified" role="group" aria-label="...">--%>
+                                <tr class="odd gradeX">
+                                    <td class="text-center"><a class="orderNoo" href="check-out.html">7435y6273642</a>
+                                    </td>
+                                    <td>Internet Explorer 4.0</td>
+                                    <td>Win 95+</td>
+                                    <td class="center">4</td>
+                                    <td style="width: 150px">
+                                        <div class="btn-group btn-group-justified" role="group" aria-label="...">
 
-                                <%--<div class="btn-group" role="group">--%>
-                                <%--<a type="button" class="btn btn-primary btn-sm text-center " href="./client_information.jsp" >--%>
-                                <%--<i class="fa fa-shopping-cart" ></i>出车--%>
-                                <%--</a>--%>
-                                <%--</div>--%>
-                                <%--<div class="btn-group" role="group">--%>
-                                <%--<a type="button" class="btn btn-danger btn-sm text-center">--%>
-                                <%--<i class="fa fa-trash"></i>取消</a>--%>
-                                <%--</div>--%>
-                                <%--</div>--%>
-                                <%--</td>--%>
-                                <%--</tr>--%>
+                                            <div class="btn-group" role="group">
+                                                <a type="button"
+                                                   class="btn btn-primary btn-sm text-center car-rent-press "
+                                                   href="./client_information.jsp?orderNo=<c:out value="FFFF"/>">
+                                                    <i class="fa fa-shopping-cart "></i>出车
+                                                </a>
+                                            </div>
+                                            <div class="btn-group" role="group">
+                                                <a type="button" class="btn btn-danger btn-sm text-center">
+                                                    <i class="fa fa-trash"></i>取消</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
 
                                 </tbody>
                             </table>
@@ -148,7 +161,25 @@
 <script src="./vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
 <script src="./vendor/datatables-responsive/dataTables.responsive.js"></script>
 
+<%--<script>--%>
+<%--$('.car-rent-press').click(function () {--%>
+<%--var orderNo = $(this).closest('tr')--%>
+<%--.find('.orderNoo')--%>
+<%--.text()--%>
+<%--$.ajax({--%>
+<%--type: "POST",--%>
+<%--url: "./client_information.jsp",--%>
+<%--async: false,--%>
+<%--contentType: "application/json; charset=utf-8",--%>
+<%--dataType: "text",--%>
+<%--data: {--%>
+<%--orderNo: orderNo--%>
+<%--},--%>
+<%--})--%>
 
+
+<%--})--%>
+<%--</script>--%>
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
     $(document).ready(function() {

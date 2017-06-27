@@ -36,85 +36,163 @@
 <div id="wrapper">
 
     <!-- Navigation -->
-    <%@include file="navbar.jsp"%>
+    <%@include file="navbar.jsp" %>
 
     <div id="page-wrapper">
-    <div class="row">
-        <!--<div class="row">-->
-            <!--<div class="col-lg-12">-->
-                <!--<h3 class="page-header">可用车辆</h3>-->
-            <!--</div>-->
-        <!--</div>-->
-        <div class="row" style="margin-top: 30px">
-            <div class="col-md-4">
-                <p>
-                    条件查询
-                </p>
-            </div>
-            <div class="col-md-1 ">
-                <div class="input-group input-group-sm">
-                    <span class="input-group-addon" id="s-car-type">车型</span>
-                    <select class="form-control">
-                        <option> </option>
-                        <option>A1</option>
-                        <option>A2</option>
-                        <option>A3</option>
-                        <option>B1</option>
-                        <option>B2</option>
-                        <option>C1</option>
-                        <option>C2</option>
-                        <option>C3</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-1 ">
-                <div class="input-group input-group-sm">
-                    <span class="input-group-addon" id="s-seats">座位数</span>
-                    <select class="form-control">
-                        <option> </option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>5+</option>
-
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-1">
-                <button type="button" class="btn btn-default dropdown-toggle fa fa-search"></button>
-
-            </div>
-        </div>
-        <hr />
         <div class="row">
-            <a href="./car_information.jsp">
-            <div class="col-sm-6 col-md-1">
-                <div class="thumbnail">
-                    <img src="http://7xil86.com2.z0.glb.qiniucdn.com/uploads/images/2015/11/2015-11-03-5.jpg" alt="...">
-                    <div >
-                        <h5 class="text-center" id="car-no" style="margin-bottom: 0px">皖N48276</h5>
-                        <p class="text-center" id="car-name" style="margin: 0px">小赚风</p>
-                        <p class="text-center" id="car-type" style="margin: 0px">ssdf</p>
-
+            <!--<div class="row">-->
+            <!--<div class="col-lg-12">-->
+            <!--<h3 class="page-header">可用车辆</h3>-->
+            <!--</div>-->
+            <!--</div>-->
+            <div class="row" style="margin-top: 30px">
+                <div class="col-md-4">
+                    <p>
+                        条件查询
+                    </p>
+                </div>
+                <div class="col-md-1 col-sm-3">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon" id="s-car-type">车型</span>
+                        <select class="form-control">
+                            <option></option>
+                            <option>A1</option>
+                            <option>A2</option>
+                            <option>A3</option>
+                            <option>B1</option>
+                            <option>B2</option>
+                            <option>C1</option>
+                            <option>C2</option>
+                            <option>C3</option>
+                        </select>
                     </div>
                 </div>
-            </div>
-            </a>
+                <div class="col-md-1 col-sm-3 ">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon" id="s-seats">座位数</span>
+                        <select class="form-control">
+                            <option></option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>5+</option>
 
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-default dropdown-toggle fa fa-search"></button>
+
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-md-2"
+                     style="border-bottom-color: #1b6d85;border: dashed; display: block; margin: 10px; padding: 5px">
+                    <div style="display: block">
+                        <i class="fa fa-ravelry" aria-hidden="true">品牌:
+                            BMW
+                        </i>
+                    </div>
+
+                    <div style="display: block">
+                        <i class="fa fa-meetup" aria-hidden="true">车系:
+                            High
+                        </i>
+                    </div>
+                    <div style="display: block">
+                        <i class="fa fa-hashtag" aria-hidden="true">牌照:
+                            皖N48276
+                        </i>
+                    </div>
+
+                    <div style="display: block">
+                        <i class="fa fa-grav" aria-hidden="true">座位数:
+                            5
+                        </i>
+                    </div>
+                    <div style="display: block">
+                        <i class="fa fa-tachometer" aria-hidden="true">颜色:
+                            Red
+                        </i>
+                    </div>
+                    <a class="btn btn-info btn-sm">zuche</a>
+                </div>
+                <div class="col-md-2"
+                     style="border-bottom-color: #1b6d85;border: dashed; display: block; margin: 10px; padding: 5px">
+                    <div style="display: block">
+                        <i class="fa fa-ravelry" aria-hidden="true">品牌:
+                            BMW
+                        </i>
+                    </div>
+
+                    <div style="display: block">
+                        <i class="fa fa-meetup" aria-hidden="true">车系:
+                            High
+                        </i>
+                    </div>
+                    <div style="display: block">
+                        <i class="fa fa-hashtag" aria-hidden="true">牌照:
+                            皖N48276
+                        </i>
+                    </div>
+
+                    <div style="display: block">
+                        <i class="fa fa-grav" aria-hidden="true">座位数:
+                            5
+                        </i>
+                    </div>
+                    <div style="display: block">
+                        <i class="fa fa-tachometer" aria-hidden="true">颜色:
+                            Red
+                        </i>
+                    </div>
+                    <a class="btn btn-info btn-sm">zuche</a>
+                </div>
+                <div class="col-md-2"
+                     style="border-bottom-color: #1b6d85;border: dashed; display: block; margin: 10px; padding: 5px">
+                    <div style="display: block">
+                        <i class="fa fa-ravelry" aria-hidden="true">品牌:
+                            BMW
+                        </i>
+                    </div>
+
+                    <div style="display: block">
+                        <i class="fa fa-meetup" aria-hidden="true">车系:
+                            High
+                        </i>
+                    </div>
+                    <div style="display: block">
+                        <i class="fa fa-hashtag" aria-hidden="true">牌照:
+                            皖N48276
+                        </i>
+                    </div>
+
+                    <div style="display: block">
+                        <i class="fa fa-grav" aria-hidden="true">座位数:
+                            5
+                        </i>
+                    </div>
+                    <div style="display: block">
+                        <i class="fa fa-tachometer" aria-hidden="true">颜色:
+                            Red
+                        </i>
+                    </div>
+                    <a class="btn btn-info btn-sm">zuche</a>
+                </div>
+
+            </div>
 
 
         </div>
 
-
-
-
-
-
     </div>
+
+
 </div>
-</div>
+
 <script src="./vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->

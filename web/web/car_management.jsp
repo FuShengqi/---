@@ -1,3 +1,5 @@
+<%@ taglib prefix="c"
+           uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="zh">
@@ -40,32 +42,77 @@
     <%@include file="navbar.jsp"%>
 
     <div id="page-wrapper">
-    <div class="card-group">
-        <div class="card">
-            <img class="card-img-top" data-src="https://www.gravatar.com/avatar/8231ba25bf18ccb76b89ea07438ca7d7" alt="Card image cap">
-            <div class="card-block">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
+        <div class="col-md-12">
+            <h4 class="page-header">suoyoucheliang</h4>
         </div>
-        <div class="card">
-            <img class="card-img-top" data-src="holder.js/100%x180/" alt="Card image cap">
-            <div class="card-block">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+        <div class="row">
+            <c:forEach var="ite" items="${allCar}">
+                <div class="col-md-2"
+                     style="border-bottom-color: #1b6d85;border: dashed; display: block; margin: 10px; padding: 5px">
+                    <div style="display: block">
+                        <i class="fa fa-ravelry" aria-hidden="true">品牌:
+                            <c:out value="${ite.modelName}"/>
+                        </i>
+                    </div>
+
+                    <div style="display: block">
+                        <i class="fa fa-meetup" aria-hidden="true">车系:
+                            <c:out value="${ite.modelType}"/>
+                        </i>
+                    </div>
+                    <div style="display: block">
+                        <i class="fa fa-hashtag" aria-hidden="true">牌照:
+                            <span class="carNo"><c:out value="${ite.carNo}"/></span>
+                        </i>
+                    </div>
+
+                    <div style="display: block">
+                        <i class="fa fa-grav" aria-hidden="true">座位数:
+                            <c:out value="${ite.modelSeatNum}"/>
+                        </i>
+                    </div>
+                    <div style="display: block">
+                        <i class="fa fa-tachometer" aria-hidden="true">颜色:
+                            <c:out value="${ite.carColor}"/>
+                        </i>
+                    </div>
+                    <a class="btn btn-info btn-sm carDetail">Detail</a>
+                </div>
+            </c:forEach>
+            <div class="col-md-2"
+                 style="border-bottom-color: #1b6d85;border: dashed; display: block; margin: 10px; padding: 5px">
+                <div style="display: block">
+                    <i class="fa fa-ravelry" aria-hidden="true">品牌:
+                        BMW
+                    </i>
+                </div>
+
+                <div style="display: block">
+                    <i class="fa fa-meetup" aria-hidden="true">车系:
+                        High
+                    </i>
+                </div>
+                <div style="display: block">
+                    <i class="fa fa-hashtag" aria-hidden="true">牌照:
+                        <span class="carNo">皖N48276</span>
+                    </i>
+                </div>
+
+                <div style="display: block">
+                    <i class="fa fa-grav" aria-hidden="true">座位数:
+                        5
+                    </i>
+                </div>
+                <div style="display: block">
+                    <i class="fa fa-tachometer" aria-hidden="true">颜色:
+                        Red
+                    </i>
+                </div>
+                <a class="btn btn-info btn-sm carDetail">Detail</a>
             </div>
+
         </div>
-        <div class="card">
-            <img class="card-img-top" data-src="holder.js/100%x180/" alt="Card image cap">
-            <div class="card-block">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-    </div>
 </div>
 </div>
 <script src="./vendor/jquery/jquery.min.js"></script>
@@ -80,5 +127,13 @@
 <script src="./dist/js/sb-admin-2.js"></script>
 
 </body>
+<script>
+    $('.carDetail').click(function () {
+        var carNo = $('.carDetail').closest('.col-md-2')
+            .find('.carNo')
+            .text();
+        window.location.href = './car_information.jsp?carNo=' + carNo
+    })
+</script>
 
 </html>

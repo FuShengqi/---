@@ -49,31 +49,88 @@
                 </h4>
             </div>
         </div>
+
+        <h4>基本信息</h4>
+        <hr/>
+        <div class="row" style="margin-bottom: 20px">
+            <div class="col-md-3">
+                <i class="fa fa-ravelry" aria-hidden="true">品牌:
+                    <c:out value="${modelName}"/>
+                </i>
+            </div>
+            <div class="col-md-3">
+                <i class="fa fa-meetup" aria-hidden="true">车系:
+                    <c:out value="${modelType}"/>
+                </i>
+            </div>
+            <div class="col-md-3">
+                <i class="fa fa-tachometer" aria-hidden="true">颜色:
+                    <c:out value="${carColor}"/>
+                </i>
+            </div>
+            <div class="col-md-3">
+                <i class="fa fa-calendar" aria-hidden="true">购买日期:
+                    <c:out value="${carPurchaseD}"/>
+                </i>
+            </div>
+        </div>
+        <h4 style="margin-top: 10px">详细配置</h4>
         <hr/>
         <div class="row">
-            <p id="carNo">6278357N</p>
+            <div class="col-md-3">
+                <i class="fa fa-grav" aria-hidden="true">座位数:
+                    <c:out value="${modelSeatNum}"/>
+                </i>
+            </div>
+            <div class="col-md-3">
+                <i class="fa fa-hdd-o" aria-hidden="true">油箱容量:
+                    <c:out value="${modelSeatNum}"/>
+                </i>
+            </div>
+            <div class="col-md-3">
+                <i class="fa fa-tint" aria-hidden="true">燃油编号:
+                    <c:out value="${carFuelN}"/>
+                </i>
+            </div>
+            <div class="col-md-3">
+                <i class="fa fa-info" aria-hidden="true">发动机号:
+                    <c:out value="${carEngineN}"/>
+                </i>
+            </div>
         </div>
-        <div class="row">
-            <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">租车</a>
+        <div class="row" style="margin-top: 10px">
+            <div class="col-md-3">
+                <i class="fa fa-info" aria-hidden="true">车架编号:
+                    <c:out value="${carFrameN}"/>
+                </i>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 10px">
+            <div class="col-md-1 col-md-offset-11">
+                <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">租车</a>
+            </div>
         </div>
     </div>
 </div>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog" role="document" style="width: auto;left: 45%;display: inline-block;">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">租车</h4>
             </div>
-            <div class="modal-body row">
-                <div class="col-md-1">
-                    <button class="btn btn-primary" id="newClient">新客户</button>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-1">
+                        <button class="btn btn-primary" id="newClient">新客户</button>
+                    </div>
+                    <div class="col-md-1 col-md-offset-3">
+                        <button class="btn btn-primary" id="accountClient">老用户</button>
+                    </div>
                 </div>
-                <div class="col-md-1 col-md-offset-4">
-                    <button class="btn btn-primary">老用户</button>
-                </div>
+
             </div>
         </div>
     </div>
@@ -93,8 +150,12 @@
 
 <script>
     $('#newClient').click(function () {
-        console.log('newClient press')
+        console.log('newClient press');
         window.location.href = './client_information.jsp?carNo=' + $('#carNo').text()
+    });
+
+    $('#accountClient').click(function () {
+        window.location.href = './account-rent.jsp?carNo=' + $('#carNo').text()
     })
 </script>
 </body>

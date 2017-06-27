@@ -78,8 +78,8 @@
                                 <c:forEach var="item" items="${list}">
                                     <tr class="odd gradeX">
 
-                                        <td class="text-center"><a href="./check-out.jsp?orderNo=" + <c:out
-                                                value="${item.orderNo}"/> >
+                                        <td class="text-center"><a href="./check-out.jsp?orderNo=<c:out
+                                                value="${item.orderNo}"/>">
                                             <c:out value="${item.orderNo}"/>
                                         </a>
                                         </td>
@@ -166,7 +166,7 @@
                             <div class="col-md-6">
                                 <div class="input-group input-group-sm">
                                     <span class="input-group-addon" id="basic-addon1">续租到</span>
-                                    <input required="true" type="date" class="form-control" id="user_date"/>
+                                    <input required="required" type="date" class="form-control" id="user_date"/>
                                 </div>
                             </div>
 
@@ -205,7 +205,7 @@
 <script src="./vendor/datatables-responsive/dataTables.responsive.js"></script>
 <script>
     $('#myModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget) // Button that triggered the modal
+        var button = $(event.relatedTarget); // Button that triggered the modal
 
         // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
@@ -216,15 +216,15 @@
             .text();
         var carNo = button.closest("tr")
             .find(".carNo")
-            .text()
+            .text();
         var clientName = button.closest('tr')
             .find(".clientName")
-            .text()
-        console.log(carNo)
-        var modal = $(this)
+            .text();
+        console.log(carNo);
+        var modal = $(this);
         modal.find('.modal-title').text('订单 ' + orderNo + ' 续租');
         modal.find('.modal-body')
-            .find('#clientName').text(clientName)
+            .find('#clientName').text(clientName);
         modal.find('.modal-body')
             .find('#carNo')
             .text(carNo)
@@ -247,7 +247,7 @@
             dataType: "text",
             success: function (dataVal) {
                 if (dataVal == 1) {
-                    alert("出车成功")
+                    alert("续租成功");
                     $('#myModal').modal('hide')
                 } else {
                     alert("操作失败")
@@ -270,7 +270,7 @@
 //            },
 //            "json"
 //        )
-    })
+    });
     $('.returnCar').click(function () {
         window.location.href = "./check-out.jsp?orderNo=" + $(this).closest("tr")
                 .find("a")

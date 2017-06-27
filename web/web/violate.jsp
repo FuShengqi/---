@@ -75,44 +75,46 @@
                                 </thead>
                                 <tbody>
                                 <c:forEach var="item" items="${list}">
-                                    <td class="text-center"><a href="./check-out.jsp?orderNo=" + <c:out
-                                            value="${item.orderNo}"/> >
-                                        <c:out value="${item.orderNo}"/>
-                                    </a>
-                                    </td>
-                                    <td class="text-center carNo">
-                                        <c:out value="${item.carId}"/>
-                                    </td>
-                                    <td class="text-center clientName">
-                                        <c:out value="${item.customerName}"/>
-                                    </td>
-                                    <td class="text-center startTime">
-                                        <c:out value="${item.orderStartD}"/>
-                                    </td>
-                                    <td class="text-center">
-                                        <c:out value="${item.orderAEndD}"/>
-                                    </td>
-                                    <td class="text-center">
-                                        <c:out value="${item.violateDate}"/>//消费金额
-                                    </td>
-                                    <td class="text-center">
-                                        <c:out value="${item.violateDate}"/>
-                                    </td>
-                                    <td class="text-center">
-                                        <c:out value="${item.violateDeposit}"/>
-                                    </td>
-                                    <td class="text-center">
-                                        <c:out value="${item.violateFee }"/>
-                                    </td>
-                                    <td style="width: 100px">
-                                        <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                                            <div class="btn-group" role="group">
-                                                <button type="button" class="btn btn-danger btn-sm"
-                                                        data-toggle="modal" data-target="#myModal" data-orderno="'">
-                                                    退还押金</button>
+                                    <tr>
+                                        <td class="text-center"><a href="./check-out.jsp?orderNo=<c:out
+                                                value="${item.orderNo}"/>">
+                                            <c:out value="${item.orderNo}"/>
+                                        </a>
+                                        </td>
+                                        <td class="text-center carNo">
+                                            <c:out value="${item.carId}"/>
+                                        </td>
+                                        <td class="text-center clientName">
+                                            <c:out value="${item.customerName}"/>
+                                        </td>
+                                        <td class="text-center startTime">
+                                            <c:out value="${item.orderStartD}"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <c:out value="${item.orderAEndD}"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <c:out value="${item.violateDate}"/>//消费金额
+                                        </td>
+                                        <td class="text-center">
+                                            <c:out value="${item.violateDate}"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <c:out value="${item.violateDeposit}"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <c:out value="${item.violateFee }"/>
+                                        </td>
+                                        <td style="width: 100px">
+                                            <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                                                <div class="btn-group" role="group">
+                                                    <button type="button" class="btn btn-danger btn-sm"
+                                                            data-toggle="modal" data-target="#myModal" data-orderno="'">
+                                                        退还押金
+                                                    </button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
+                                        </td>
                                     </tr>
                                 </c:forEach>
                                 <%--<tr class="odd gradeX">--%>
@@ -208,37 +210,50 @@
 <script>
 
     $('#myModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget)
+        var button = $(event.relatedTarget);
         console.log(button)
         var orderNo = button.closest('tr')
             .find('.order-no')
-            .text()
+            .text();
         var yaj = button.closest('tr')
             .find('.yaj')
-            .text()
+            .text();
         var kouk = button.closest('tr')
             .find('.kouk')
-            .text()
-        var modal = $(this)
-        modal.find('#orderNo').text(orderNo)
-        modal.find('#yaj').text(yaj)
-        modal.find('#kouk').text(kouk)
+            .text();
+        var modal = $(this);
+        modal.find('#orderNo').text(orderNo);
+        modal.find('#yaj').text(yaj);
+        modal.find('#kouk').text(kouk);
         modal.find('#tuik').text(yaj - kouk)
 
-    })
+    });
 
     $("#drawback").click(function () {
-        $.post(
-            "./",
-            {},
-            function () {
-                alert("退款成功");
-                $('#myModal').modal('hide')
+        var modal = $('.modal');
+        var orderNo = modal.find('#orderNo').text(orderNo);
+        $.ajax({
+            type: "POST",
+            url: "./",
+            data: {
+                orderNo: orderNo
             },
-            "json"
-        )
+            async: false,
+            contentType: "application/json; charset=utf-8",
+            dataType: "text",
+            success: function (dataVal) {
+                if (dataVal == 1) {
+                    alert("操作成功");
+                    $('#myModal').modal('hide')
+                } else {
+                    alert("操作失败")
+                }
+            },
+            error: function () {
+                alert("操作失败")
+            }
+        })
 
-        console.log('fuck')
     });
 </script>
 

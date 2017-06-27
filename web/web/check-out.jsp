@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>结算</title>
+    <title>还车结算</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -100,7 +100,7 @@
                 <div class="col-md-4">
                     <label class="control-label">还车日期</label>
                     <div class="controls">
-                        <input type="date" required="true" placeholder="" name="orderAEndD" class="input-xlarge">
+                        <input type="date" required="required" placeholder="" name="orderAEndD" class="input-xlarge">
                     </div>
 
 
@@ -119,7 +119,7 @@
                 <div class="col-md-4">
                     <label class="control-label">结束里程</label>
                     <div class="controls">
-                        <input type="number" required="true" placeholder="" name="orderEndM" class="input-xlarge">
+                        <input type="number" required="required" placeholder="" name="orderEndM" class="input-xlarge">
                     </div>
 
 
@@ -137,7 +137,7 @@
 
 
             <div class="col-md-2 col-md-offset-10">
-                <button type="submit " class="btn btn-primary">结算</button>
+                <button type="submit" class="btn btn-primary">结算</button>
             </div>
         </form>
 
