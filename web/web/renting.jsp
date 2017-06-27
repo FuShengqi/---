@@ -75,40 +75,41 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="odd gradeX">
-                                    <c:forEach var="item" items="${list}">
-                                    <td class="text-center"><a href="./check-out.jsp?orderNo=" + <c:out
-                                            value="${item.orderNo}"/> >
-                                        <c:out value="${item.orderNo}"/>
-                                    </a>
-                                    </td>
-                                    <td class="text-center carNo">
-                                        <c:out value="${item.carId}"/>
-                                    </td>
-                                    <td class="text-center clientName">
-                                        <c:out value="${item.customerName}"/>
-                                    </td>
-                                    <td class="text-center startTime">
-                                        <c:out value="${item.orderStartD}"/>
-                                    </td>
-                                    <td class="text-center">
-                                        <c:out value="${item.orderPEndID}"/>
-                                    </td>
-                                    <td class="text-center">
-                                        <c:out value="${item.orderDeposit}"/>
-                                    </td>
-                                    <td style="width: 150px">
-                                        <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                                            <div class="btn-group" role="group">
-                                                <a type="button" class="btn btn-primary btn-sm " data-toggle="modal"
-                                                   data-target="#myModal">续租</a>
+                                <c:forEach var="item" items="${list}">
+                                    <tr class="odd gradeX">
+
+                                        <td class="text-center"><a href="./check-out.jsp?orderNo=" + <c:out
+                                                value="${item.orderNo}"/> >
+                                            <c:out value="${item.orderNo}"/>
+                                        </a>
+                                        </td>
+                                        <td class="text-center carNo">
+                                            <c:out value="${item.carId}"/>
+                                        </td>
+                                        <td class="text-center clientName">
+                                            <c:out value="${item.customerName}"/>
+                                        </td>
+                                        <td class="text-center startTime">
+                                            <c:out value="${item.orderStartD}"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <c:out value="${item.orderPEndID}"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <c:out value="${item.orderDeposit}"/>
+                                        </td>
+                                        <td style="width: 150px">
+                                            <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                                                <div class="btn-group" role="group">
+                                                    <a type="button" class="btn btn-primary btn-sm " data-toggle="modal"
+                                                       data-target="#myModal">续租</a>
+                                                </div>
+                                                <div class="btn-group" role="group">
+                                                    <a type="button" class="btn btn-danger btn-sm returnCar">还车</a>
+                                                </div>
                                             </div>
-                                            <div class="btn-group" role="group">
-                                                <a type="button" class="btn btn-danger btn-sm returnCar">还车</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
                                 </c:forEach>
                                 <%--<tr class="odd gradeX">--%>
                                 <%--<td class="text-center"><a href="./" name="orderNo">18572398575</a></td>--%>

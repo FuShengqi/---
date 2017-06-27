@@ -1,4 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c"
+           uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="zh">
@@ -10,8 +11,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>车辆详情</title>
+    <title>选择预定方式</title>
 
+    <link href="./vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="./vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
     <!-- Bootstrap Core CSS -->
     <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -38,48 +43,23 @@
 <div id="wrapper">
 
     <!-- Navigation -->
-    <%@include file="navbar.jsp"%>
+    <%@include file="navbar.jsp" %>
     <div id="page-wrapper">
-        <div class="row" >
-            <div class="col-md-12">
-                <h4 class="page-header">
-                    <c:out value="${modelName}"/>
-                    /
-                    <c:out value="${modelFuelTank}"/>
-                </h4>
-            </div>
-        </div>
-        <hr/>
-        <div class="row">
-            <p id="carNo">6278357N</p>
+        <div class="row page-header">
+            <h4></h4>
         </div>
         <div class="row">
-            <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">租车</a>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">租车</h4>
-            </div>
-            <div class="modal-body row">
-                <div class="col-md-1">
-                    <button class="btn btn-primary" id="newClient">新客户</button>
-                </div>
-                <div class="col-md-1 col-md-offset-4">
-                    <button class="btn btn-primary">老用户</button>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <span class="input-group-addon" id="date-of-issue">手机号码</span>
+                    <input type="number" required="true" class="form-control input-xlarge" placeholder="必填"
+                           aria-describedby="basic-addon1">
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
+</body>
 <script src="./vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
@@ -90,13 +70,5 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="./dist/js/sb-admin-2.js"></script>
-
-<script>
-    $('#newClient').click(function () {
-        console.log('newClient press')
-        window.location.href = './client_information.jsp?carNo=' + $('#carNo').text()
-    })
-</script>
-</body>
 
 </html>

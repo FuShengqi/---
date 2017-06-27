@@ -61,9 +61,10 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <c:forEach var="item" items="${list}">
                                 <tr class="odd gradeX">
-                                    <c:forEach var="item" items="${list}">
-                                        <td class="text-center"><a href="./check-out.jsp?orderNo=" + <c:out
+
+                                    <td class="text-center"><a href="./check-out.jsp?orderNo=" + <c:out
                                                 value="${item.orderNo}"/> >
                                             <c:out value="${item.orderNo}"/>
                                         </a></td>
