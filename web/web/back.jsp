@@ -1,3 +1,5 @@
+<%@ taglib prefix="c"
+           uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="zh">
@@ -45,73 +47,77 @@
     <%@include file="navbar.jsp"%>
 
     <div id="page-wrapper">
-    <div class="row">
-        <div class="col-md-12">
-            <h4 class="page-header">已还车订单</h4>
-
-        </div>
         <div class="row">
-            <div class="col-lg-12">
-                <div class="panel panel-default">
-                    <!--<div class="panel-heading">-->
+            <div class="col-md-12">
+                <h4 class="page-header">已还车订单</h4>
 
-                    <!--</div>-->
-                    <!-- /.panel-heading -->
-                    <div class="panel-body">
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <!--<div class="panel-heading">-->
 
-                        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                            <thead>
-                            <tr>
-                                <th class="text-center">订单号</th>
-                                <th class="text-center">车牌号</th>
-                                <th class="text-center">客户姓名</th>
-                                <th class="text-center">出车日期</th>
-                                <th class="text-center">还车日期</th>
-                                <th class="text-center">消费金额</th>
-                                <th class="text-center">违章押金</th>
-                                <!--<th class="text-center">balabala</th>-->
-                                <!--<th class="text-center">操作</th>-->
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr class="odd gradeX">
-                                <td class="text-center" id="order-no"><a href="./">18572398575</a></td>
-                                <td class="text-center">皖N.1859395</td>
-                                <td class="text-center">大头</td>
-                                <td class="text-center">2017-06-22</td>
-                                <td class="text-center">2017-06-22</td>
-                                <td class="text-center">200</td>
-                                <td class="text-center">2022</td>
-                                <!--<td style="width: 150px">-->
-                                    <!--<div class="btn-group btn-group-justified" role="group" aria-label="...">-->
+                        <!--</div>-->
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
 
-                                        <!--<div class="btn-group" role="group">-->
-                                            <!--<a type="button" class="btn btn-primary btn-sm " id="new-rent" href="./client_information.html" >续租</a>-->
-                                        <!--</div>-->
-                                        <!--<div class="btn-group" role="group">-->
-                                            <!--<a type="button" class="btn btn-danger btn-sm" id="rent-finish" href="./check-out.html">还车</a>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</td>-->
-                                <!--<td style="width: 100px">-->
-                                <!--<div class="btn-group btn-group-justified" role="group" aria-label="...">-->
-                                <!--<div class="btn-group" role="group">-->
-                                <!--<a type="button" class="btn btn-primary btn-sm " href="./check-out.html" >续租</a>-->
-                                <!--<a type="button" class="btn btn-primary btn-sm " href="./check-out.html" >还车结算</a>-->
-                                <!--</div>-->
-                                <!--&lt;!&ndash;<div class="btn-group" role="group">&ndash;&gt;-->
-                                <!--&lt;!&ndash;<button type="button" class="btn btn-danger btn-sm">取消</button>&ndash;&gt;-->
-                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                <!--</div>-->
-                                <!--</td>-->
-                            </tr>
-                            </tbody>
-                        </table>
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">订单号</th>
+                                    <th class="text-center">车牌号</th>
+                                    <th class="text-center">客户姓名</th>
+                                    <th class="text-center">出车日期</th>
+                                    <th class="text-center">还车日期</th>
+                                    <%--<th class="text-center">消费金额</th>--%>
+                                    <th class="text-center">违章押金</th>
+                                    <!--<th class="text-center">balabala</th>-->
+                                    <!--<th class="text-center">操作</th>-->
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <c:forEach var="item" items="${list}">
+                                    <td class="text-center"><a href="./check-out.jsp?orderNo=" + <c:out
+                                            value="${item.orderNo}"/> >
+                                        <c:out value="${item.orderNo}"/>
+                                    </a>
+                                    </td>
+                                    <td class="text-center carNo">
+                                        <c:out value="${item.carId}"/>
+                                    </td>
+                                    <td class="text-center clientName">
+                                        <c:out value="${item.customerName}"/>
+                                    </td>
+                                    <td class="text-center startTime">
+                                        <c:out value="${item.orderStartD}"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <c:out value="${item.orderAEndD}"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <c:out value="${item.iolateDeposit}"/>
+                                    </td>
+                                    <td style="width: 150px">
+                                        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                                            <div class="btn-group" role="group">
+                                                <a type="button" class="btn btn-primary btn-sm " data-toggle="modal"
+                                                   data-target="#myModal">续租</a>
+                                            </div>
+                                            <div class="btn-group" role="group">
+                                                <a type="button" class="btn btn-danger btn-sm returnCar">还车</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    </tr>
+                                </c:forEach>
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </div>
 </div>
 <script src="./vendor/jquery/jquery.min.js"></script>
