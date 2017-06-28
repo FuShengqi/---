@@ -64,7 +64,7 @@
                     <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
                 </div>
                 <div class="etc-login-form">
-                    <p>already have an account? <a href="./login.jsp">login here</a></p>
+                    <p>已有? <a href="./login.jsp">登录</a></p>
                 </div>
             </form>
         </div>
