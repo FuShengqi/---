@@ -1,10 +1,13 @@
 package rentCar.service;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import rentCar.entity.StuffInfo;
+import rentCar.mappers.OrderMapper;
 import rentCar.mappers.StuffMapper;
+import rentCar.util.IdFactory;
 
 import javax.annotation.Resource;
 import java.sql.Connection;
@@ -18,8 +21,11 @@ import java.util.*;
 @Transactional
 public class StuffServiceImpl implements StuffService {
     private int result = -1;
-@Resource
-private StuffMapper stuffMapper;
+    private IdFactory idFactory;
+    @Resource
+    private StuffMapper stuffMapper;
+    @Resource
+    OrderMapper orderMapper;
     public List<StuffInfo> findAll() {
         List<StuffInfo> list=stuffMapper.findAll();
         return list;
@@ -27,8 +33,6 @@ private StuffMapper stuffMapper;
 
     public int login(String stuffTel, String stuffPassword) {
         Connection connection = null;
-
-
         //1、先判断是否有相应的用户名
         String id = stuffMapper.queryIDByStuffTel(stuffTel);
         if (id == null) {
@@ -37,8 +41,6 @@ private StuffMapper stuffMapper;
         }else{
             // result=1;
         }
-
-
         //2、再判断密码是否正确
         String  passWordTrue =stuffMapper.queryPassWordById(id);
         if (!passWordTrue.equals(stuffPassword)) {
@@ -111,6 +113,22 @@ private StuffMapper stuffMapper;
             result=1;
         }
         return result;
+    }
+/*
+* bookCount,rentingCount,backCount,violateCount
+* */
+    @Override
+    public HashMap setFourCount() {
+        HashMap<String, Object> map = new HashMap<>();
+        int  bookCount= orderMapper.bookCount();
+        map.put("bookCount", bookCount);
+        int  rentingCount= orderMapper.rentingCount();
+        map.put("rentingCount", rentingCount);
+        int  backCount=orderMapper.backCount();
+        map.put("backCount",backCount);
+        int  violateCount= orderMapper.violateCount();
+        map.put("violateCount",violateCount);
+        return map;
     }
 
     @Override

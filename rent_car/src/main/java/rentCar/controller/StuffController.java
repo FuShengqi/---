@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 import rentCar.entity.StuffInfo;
 import rentCar.service.StuffService;
 
@@ -26,29 +27,34 @@ public class StuffController {
         private int registerResult =100;
         @Resource
         private StuffService stuffService;
-        @RequestMapping("list")
+        @RequestMapping("/list")
         public String list(){
             List<StuffInfo> list=stuffService.findAll();
             System.out.println(String.valueOf(list));
             return String.valueOf(list);
         }
 
-
+    @RequestMapping("/index")
+    public ModelAndView index(){
+        Map<String, Object> map = new HashMap<>();
+        map =stuffService.setFourCount();
+        ModelAndView mav =new ModelAndView();
+        mav.setViewName("index"); // index之后不需要加.jsp
+        mav.addAllObjects(map);
+        return  mav;
+    }
     /*
     登录实现，获取登录输入流，进行处理，返回登录结果。
+    登录成功返回四个键值对，bookCount,rentingCount,backCount,violateCount
+    在model里设置。
     */
 
         @RequestMapping(value = "/Login",method= RequestMethod.POST)
-        public void login(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+        public String login(HttpServletRequest req, HttpServletResponse resp) throws Exception {
             System.out.println("请求为" + req);
             System.out.println("请求Service为" +stuffService);
-            BufferedReader br = req.getReader();
+            /*BufferedReader br = req.getReader();
 
-        /*String str, wholeStr = "";
-        while((str = br.readLine()) != null){
-            wholeStr += str;
-        }
-        System.out.println(wholeStr);*/
             System.out.println("获取请求流："+br);
 
             String str, jsonString = "";
@@ -57,59 +63,42 @@ public class StuffController {
                 System.out.println("str为" + str);
             }
             System.out.println(jsonString);
-            System.out.println("请求为" + jsonString);
-            JSONObject jsonObject= JSONObject.parseObject(jsonString);
-            String userName2 = (String)jsonObject.get("userName");
-            String passWord2 = (String) jsonObject.get("stuffPassword");
+            System.out.println("请求为" + jsonString);*/
+           // JSONObject jsonObject= JSONObject.parseObject(jsonString);
+           // String userName2 = (String)jsonObject.get("userName");//不改变
+           // String passWord2 = (String) jsonObject.get("stuffPassword");
 
-            String userName1 = (String) req.getAttribute("userName");
-            String passWord1 = (String) req.getAttribute("passWord");
-            // String content = (String) req.
-            // String userName = (String) user.getUserName("userName");
-            //String passWord = (String) req.getAttribute("passWord");
-
-            // JSONObject jsonObject= JSONObject.parseObject(jsonString);
-            // String userName = (String)jsonObject.get("userName");
-            // String passWord = (String) jsonObject.get("passWord");
-            //JSONObject jsonObject=JSONObject.
-            //System.out.println("请求的内容为" + req);
             String userName = req.getParameter("userName");
             String passWord = req.getParameter("passWord");
 
             System.out.println("69请求的userName为" + userName + "\n69请求的passWord为" + passWord);
-            System.out.println("69请求的userName1为" + userName1 + "\n69请求的passWord1为" + passWord1);
-            System.out.println("69请求的userName2为" + userName2 + "\n69请求的passWord2为" + passWord2);
-            loginResult = stuffService.login(userName2, passWord2);
+           // System.out.println("69请求的userName2为" + userName2 + "\n69请求的passWord2为" + passWord2);
+            //loginResult = stuffService.login(userName2, passWord2);
+            loginResult = stuffService.login(userName, passWord);
             String result1=loginResult+"This is a 登录结果";
             System.out.println("结果为" + result1);
             Map<String, Object> map = new HashMap<>();
             map.put("RESULT_KEY", loginResult);
-            map.put("userName",userName);
-            map.put("passWord",passWord);
-            map.put("userName1",userName1);
-            map.put("passWord1",passWord1);
-      /*  // 如果成功，还需要加上token
-        if (loginResult.getCode() == 0) {
-            Map<String, Object> dataMap = new HashMap<>();
-            dataMap.put("token", loginResult.getToken());
-
-            map.put("data", dataMap);
-        }*/
+            //map.put("userName",userName);
+           // map.put("passWord",passWord);
             resp.addHeader("Content-Type","application/json; charset=utf-8");
             resp.addHeader("Accept-Encoding","gzip");
             resp.setContentType("text/plain;charset=utf-8" );
             resp.setCharacterEncoding("UTF-8");
-
-            String result = JSON.toJSONString(map);
-
-            System.out.println("结果为" + result);
-            //resp.setCharacterEncoding("application/json;charset=utf-8");
+             if(loginResult==1){
+                return "redirect:/Stuff/index";
+                // return "redirect:/index.jsp";
+             }else{
+                 return "redirect:/login.jsp";
+             }
+            //String result = JSON.toJSONString(map);
+            /*System.out.println("结果为" + result);
             PrintWriter printWriter = resp.getWriter();
             printWriter.write(result);
             //printWriter.write(result1);
             //  printWriter.flush();
             printWriter.close();
-
+*/
         }
 
       /*
@@ -246,32 +235,7 @@ public class StuffController {
 
         }
 
-        public String toString(){
-            String result=null;
-            InputStream inputStream = null;
-            //inputStream = responseBody.byteStream();
-            BufferedReader br = null;
-            br=new BufferedReader(new InputStreamReader(inputStream));
-            String string =null;
-            StringBuilder sb = new StringBuilder();
-            String line = null;
-            try {
-                while ((line = br.readLine()) != null) {
-                    sb.append(line + "\n");
-                }
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    inputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            string=sb.toString();
-            return string;
-        }
     }
 
 

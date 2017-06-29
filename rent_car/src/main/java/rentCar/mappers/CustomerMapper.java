@@ -14,6 +14,8 @@ public interface CustomerMapper {
     CustomerInfo getUserByNo(String  customerNo);
     String queryIDByCustomerNo(String  customerNo);
     String queryIDByCustomerTel(String customerTel);
+    String queryCustomerNameById(String id);
+    String queryCustomerTelById(String id);
     String  queryPassWordById(String id);
     //void  insertUser(@Param("ID") int id, @Param("USERNAME") String username,@Param("PASSWORD") String password);
     List<CustomerInfo> findAll();

@@ -5,6 +5,7 @@ import rentCar.entity.StuffInfo;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by xpb on 2017/6/26.
@@ -16,4 +17,5 @@ public interface StuffService {
     int login(String userName, String passWord);
     int register(HashMap infoMap);
     int register(StuffInfo stuffInfo);
+    HashMap setFourCount();
 }
