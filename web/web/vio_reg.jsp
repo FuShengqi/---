@@ -40,8 +40,50 @@
     <%@include file="navbar.jsp"%>
 
     <div id="page-wrapper">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+
+                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <thead>
+                        <tr>
+                            <th class="text-center"></th>
+                            <th class="text-center">违章时间</th>
+                            <th class="text-center">违章事件</th>
+                            <th class="text-center">扣分</th>
+                            <th class="text-center">违章罚款</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach var="item" items="${list}">
+                            <tr class="odd gradeX">
+                                <td class="text-center">
+                                    <c:out value="${item.carID}"/>
+                                </td>
+                                <td class="text-center">
+                                    <c:out value="${item.violateDate}"/>
+                                </td>
+                                <td class="text-center">
+                                    <c:out value="${item.violateEvent}"/>
+                                </td>
+                                <td class="text-center">
+                                    <c:out value="${item.violateMarks}"/>
+                                </td>
+                                <td class="text-center">
+                                    <c:out value="${item.violateFee}"/>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 </div>
-</div>
+
+
+</body>
 <script src="./vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
@@ -52,7 +94,12 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="./dist/js/sb-admin-2.js"></script>
-
-</body>
+<script>
+    $(document).ready(function () {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+</script>
 
 </html>
