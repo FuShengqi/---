@@ -75,7 +75,26 @@
 
                 </div>
             </div>
-
+            <h4 style="margin-top: 30px">租赁信息</h4>
+            <hr/>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">租车日期</span>
+                        <input type="date" required="required" id="orderStartD"
+                               class="form-control" name="orderStartD" placeholder="必填"
+                               aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">还车日期</span>
+                        <input type="date" required="required" id="orderPendD"
+                               class="form-control" name="orderPendD" placeholder="必填"
+                               aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
             <h4 style="margin-top: 30px"> 驾驶证信息</h4>
             <hr/>
             <div class="row">
@@ -213,6 +232,18 @@
             }
         })
     })
+</script>
+<script>
+    var now = new Date();
+
+    var day = ("0" + now.getDate()).slice(-2);
+    var month = ("0" + (now.getMonth() + 1)).slice(-2);
+
+    var today = now.getFullYear() + "-" + (month) + "-" + (day);
+    $('#orderStartD').attr('min', today);
+    $('#orderStartD').val(today);
+    $('#orderPendD').attr('min', today);
+    $('#orderPendD').val(today);
 </script>
 
 <script>
