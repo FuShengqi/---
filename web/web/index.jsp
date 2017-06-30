@@ -6,8 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<%@ taglib prefix="c"
-           uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
@@ -68,7 +67,9 @@
                   <i class="fa fa-ticket fa-5x"></i>
                 </div>
                 <div class="col-xs-9 text-right">
-                  <div class="huge">26</div>
+                  <div class="huge">
+
+                  </div>
                   <div>预约数量</div>
                 </div>
               </div>

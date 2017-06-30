@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="rentCar.mappers.LicenseMapper">
+    <resultMap type="rentCar.entity.LicenseInfo" id="licenseMap">
+        <id property="id" column="id" />
+        <result property="licenseNo" column="license_no" />
+        <result property="licenseType" column="licence_type" />
+        <result property="licenseAges" column="licence_ages" />
+        <result property="licenseStartDate" column="licence_start_date" />
+        <result property="licenseInvalidDate" column="licence_invalid_date" />
+        <result property="licenseStatus" column="licence_status" />
+        <result property="recordCreator" column="record_creator" />
+        <result property="recordCreateTime" column="record_create_time" />
+
+    </resultMap>
+    <!-- 此处select标签的id值对应Mapper类中方法名 -->
+    <select id="getLicenseByNo" parameterType="string" resultMap="licenseMap">
+        select * from license_info where license_no = #{licenseNo}
+    </select>
+    <select id="queryIDByLicenseNo" parameterType="string" resultType="java.lang.String">
+        select ID from license_info where license_no = #{licenseNo}
+    </select>
+
+    <select id="findAll" resultMap="licenseMap">
+        select * from license_info;
+    </select>
+
+    <select id="count" resultType="java.lang.Integer">
+        select count(*)  from license_info;
+    </select>
+
+
+    <insert id="insertLicenseMap" parameterType="java.util.HashMap">
+        insert into license_info  values (#{id},#{licenseNo},#{licenseType},
+        #{licenseAges},#{licenseStartDate},
+        #{licenseInvalidDate},#{licenseStatus},#{recordCreator},#{recordCreateTime})
+    </insert>
+    <insert id="insertLicense" parameterType="rentCar.entity.LicenseInfo">
+        insert into license_info  values(#{id},#{licenseNo},#{licenseType},
+        #{licenseAges},#{licenseStartDate},
+        #{licenseInvalidDate},#{licenseStatus},#{recordCreator},#{recordCreateTime})
+    </insert>
+
+    <delete id="deleteLicense" parameterType="java.lang.String" >
+        update  license_info  set license_status = 1  where id = #{id}
+    </delete>
+
+    <!-- update需要进一步更改-->
+    <update id="updateLicenseInfo"  parameterType="java.util.HashMap" >
+        update  license_info set license_no  = #{licenseNo} where id= #{id}
+    </update>
+
+
+</mapper>

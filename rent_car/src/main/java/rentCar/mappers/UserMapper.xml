@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="rentCar.mappers.UserMapper">
+    <resultMap type="rentCar.entity.User" id="userMap">
+        <id property="" column="ID" />
+        <result property="username" column="USERNAME" />
+        <result property="password" column="PASSWORD" />
+    </resultMap>
+    <!-- 此处select标签的id值对应Mapper类中方法名 -->
+    <select id="getUserByName" parameterType="string" resultMap="userMap">
+        select * from T_USER where USERNAME = #{username}
+    </select>
+    <select id="queryUserName" parameterType="string" resultType="java.lang.String">
+        select ID from T_USER where USERNAME = #{username}
+    </select>
+    <select id="queryPassWord" parameterType="java.lang.String" resultType="java.lang.String">
+        select PASSWORD from T_USER where ID= #{id}
+    </select>
+
+    <select id="findAll" resultMap="userMap">
+        select * from T_USER;
+    </select>
+       <!--
+       <select id="queryPassWord" parameterType="string" resultType="java.lang.Integer">
+        select PASSWORD from T_USER where ID= #{0} and PASSWORD = #{1}
+    </select>
+    <select id="insertNewUser" parameterType="string" resultType="java.lang.Integer">
+        insert PASSWORD from T_USER where ID= #{0} and PASSWORD = #{1}
+    </select>
+    <insert id="insertUser" parameterType="String">
+        insert into t_user (ID,USERNAME,PASSWORD) values (#{id},#{username},#{password})
+    </insert>
+        -->
+    <insert id="insertUser" parameterType="rentCar.entity.User">
+        insert into T_USER (ID,USERNAME,PASSWORD) values (#{id},#{username},#{password})
+    </insert>
+    <insert id="insertUserAuto" parameterType="rentCar.entity.User" useGeneratedKeys="true" keyProperty="id">
+        insert into T_USER(USERNAME,PASSWORD) values(#{username},#{password})
+    </insert>
+
+    <delete id="deleteUser" parameterType="java.lang.String" >
+        delete  from T_USER where ID= #{id}
+    </delete>
+
+    <update id="updatePassword" parameterType="java.lang.String" >
+        update  T_USER set PASSWORD = #{passWord} where ID= #{id}
+    </update>
+
+
+
+</mapper>
