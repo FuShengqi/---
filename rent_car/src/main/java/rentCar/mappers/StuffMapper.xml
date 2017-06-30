@@ -5,12 +5,24 @@
 
 <mapper namespace="rentCar.mappers.StuffMapper">
     <resultMap type="rentCar.entity.StuffInfo" id="stuffMap">
-        <id property="" column="ID" />
-        <result property="username" column="USERNAME" />
-        <result property="password" column="PASSWORD" />
+        <id property="id" column="id" />
+        <result property="stuffNo" column="stuff_no" />
+        <result property="stuffPassword" column="stuff_password" />
+        <result property="stuffName" column="stuff_name" />
+        <result property="stuffSex" column="stuff_sex" />
+        <result property="stuffAge" column="stuff_age" />
+        <result property="stuffId" column="stuff_id" />
+        <result property="stuffTel" column="stuff_tel" />
+        <result property="stuffWorkplace" column="stuff_workplace" />
+        <result property="stuffPost" column="stuff_post" />
+        <result property="stuffEmail" column="stuff_email" />
+        <result property="stuffStatus" column="stuff_status" />
+        <result property="stuffAddress" column="stuff_address" />
+        <result property="recordCreator" column="record_creator" />
+        <result property="recordCreateTime" column="record_create_time" />
     </resultMap>
     <!-- 此处select标签的id值对应Mapper类中方法名 -->
-    <select id="getUserByNo" parameterType="string" resultType="rentCar.entity.StuffInfo">
+    <select id="getUserByNo" parameterType="string" resultMap="stuffMap">
         select * from stuff_info where stuff_no = #{stuffNo}
     </select>
     <select id="queryIDByStuffNo" parameterType="string" resultType="java.lang.String">
@@ -23,7 +35,7 @@
         select stuff_password  from stuff_info where id= #{ id }
     </select>
 
-    <select id="findAll" resultType="rentCar.entity.StuffInfo">
+    <select id="findAll" resultMap="stuffMap">
         select * from stuff_info;
     </select>
 

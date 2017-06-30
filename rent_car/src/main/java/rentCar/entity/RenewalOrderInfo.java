@@ -8,13 +8,23 @@ import java.util.Date;
 public class RenewalOrderInfo {
     private String id;
     private String orderId;
+
+
+
+    private String orderNo;
     private Date renewalStartDate;
     private Date renewalEndDate;
     private float renewalDeposit;
     private boolean renewalStatus;
     private String recordCreator;
     private Date recordCreateTime;
+    public String getOrderNo() {
+        return orderNo;
+    }
 
+    public void setOrderNo(String orderNo) {
+        this.orderNo = orderNo;
+    }
     public String getId() {
         return id;
     }

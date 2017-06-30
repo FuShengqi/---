@@ -21,13 +21,49 @@ public class OrderInfo {
     private float kmoutConsume;
     private float discountAmount;
     private float rentDeposit;
-    private float  illegalDeposit;
+    private float  violateDeposit;
     private float  damageDeposit;
-    private float  illegalDeductions;
+    private float  violateDeductions;
     private float  damageDeductions;
-    private float  totalDonsume;
+    private float  totalConsume;
+    private float orderStatus;
     private String  recordCreator;
     private Date recordCreateTime;
+    public float getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(float orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+
+    public float getTotalConsume() {
+        return totalConsume;
+    }
+
+    public void setTotalConsume(float totalConsume) {
+        this.totalConsume = totalConsume;
+    }
+
+
+
+    public float getViolateDeposit() {
+        return violateDeposit;
+    }
+
+    public void setViolateDeposit(float violateDeposit) {
+        this.violateDeposit = violateDeposit;
+    }
+
+    public float getViolateDeductions() {
+        return violateDeductions;
+    }
+
+    public void setViolateDeductions(float violateDeductions) {
+        this.violateDeductions = violateDeductions;
+    }
+
 
     public String getId() {
         return id;
@@ -149,13 +185,7 @@ public class OrderInfo {
         this.rentDeposit = rentDeposit;
     }
 
-    public float getIllegalDeposit() {
-        return illegalDeposit;
-    }
 
-    public void setIllegalDeposit(float illegalDeposit) {
-        this.illegalDeposit = illegalDeposit;
-    }
 
     public float getDamageDeposit() {
         return damageDeposit;
@@ -165,13 +195,7 @@ public class OrderInfo {
         this.damageDeposit = damageDeposit;
     }
 
-    public float getIllegalDeductions() {
-        return illegalDeductions;
-    }
 
-    public void setIllegalDeductions(float illegalDeductions) {
-        this.illegalDeductions = illegalDeductions;
-    }
 
     public float getDamageDeductions() {
         return damageDeductions;
@@ -181,13 +205,6 @@ public class OrderInfo {
         this.damageDeductions = damageDeductions;
     }
 
-    public float getTotalDonsume() {
-        return totalDonsume;
-    }
-
-    public void setTotalDonsume(float totalDonsume) {
-        this.totalDonsume = totalDonsume;
-    }
 
     public String getRecordCreator() {
         return recordCreator;

@@ -41,51 +41,27 @@ public class UserControllerTest {
 
     protected MockMvc mockMvc ;
 
-    private String json ="{\"age\":0,\"passWord\":\"123\",\"userName\":\"admin\"}";
+
     private String jsonString="{'age':0,'passWord':'123','userName':'admin'}";
-    private String jsonStringCustomerRegister="{'customerId':'E110','customerTel':'110'," +
-            "'customerPassword':'111','recordCreator':'0',,'stuffEmail':'9698@qq.com'}";
     private String jsonStringStuffRegister="{'stuffId':'E110','stuffTel':'110'," +
             "'stuffPassword':'111','recordCreator':'123','stuffEmail':'9698@qq.com'}";
-    private String jsonStringLogin="{'staffNumber':'E11111110','password':'123'}";
-    private String jsonStringInsertInfo="{'staffNumber':'E110','staffName':'admin'}";
-    private String jsonStringQueryInfo="{'staffNumber':'E110'}";
-    private String loginUrl="/UserAhu/Login";
-    private String registerUrl="/Customer/Register";
+
+
     private String stuffRegisterUrl="/Stuff/Register";
-    private String insertInfoUrl="/UserInfoAhu/InsertStaffBaseInfo";
-    private String queryInfoUrl="/UserInfoAhu/QueryStaffBaseInfo";
+
     @Before()  //这个方法在每个方法执行之前都会执行一遍
     public void setup()
     {
         mockMvc = MockMvcBuilders.webApplicationContextSetup(wac).build();
     }
-
-    @Test
-    public void getAllCategoryTest() throws Exception
-    {
-        String responseString = mockMvc.perform
-                (
-                        post(loginUrl, "json").characterEncoding("UTF-8")
-                                .contentType(MediaType.APPLICATION_JSON)
-                                .body(jsonStringLogin.getBytes())
-
-                )
-              //  .andExpect(status().isOk())    //返回的状态是200
-                .andDo(print())       //打印出请求和相应的内容
-                //.andReturn();
-               .andReturn().getResponse().getContentAsString();   //将相应的数据转换为字符串
-        //System.out.println("-----返回的json = " + responseString);
-    }
-
     @Test
     public void registerTest() throws Exception
     {
         String responseString = mockMvc.perform
                 (
-                        post(registerUrl, "json").characterEncoding("UTF-8")
+                        post(stuffRegisterUrl, "json").characterEncoding("UTF-8")
                                 .contentType(MediaType.APPLICATION_JSON)
-                                .body(jsonStringCustomerRegister.getBytes())
+                                .body(jsonStringStuffRegister.getBytes())
 
                 )
                 //  .andExpect(status().isOk())    //返回的状态是200
@@ -95,39 +71,6 @@ public class UserControllerTest {
         //System.out.println("-----返回的json = " + responseString);
     }
 
-    @Test
-    public void insertTest() throws Exception
-    {
-        String responseString = mockMvc.perform
-                (
-                        post(insertInfoUrl, "json").characterEncoding("UTF-8")
-                                .contentType(MediaType.APPLICATION_JSON)
-                                .body(jsonStringInsertInfo.getBytes())
-
-                )
-                //  .andExpect(status().isOk())    //返回的状态是200
-                .andDo(print())       //打印出请求和相应的内容
-                //.andReturn();
-                .andReturn().getResponse().getContentAsString();   //将相应的数据转换为字符串
-        //System.out.println("-----返回的json = " + responseString);
-    }
-
-    @Test
-    public void queryTest() throws Exception
-    {
-        String responseString = mockMvc.perform
-                (
-                        post(queryInfoUrl, "json").characterEncoding("UTF-8")
-                                .contentType(MediaType.APPLICATION_JSON)
-                                .body(jsonStringQueryInfo.getBytes())
-
-                )
-                //  .andExpect(status().isOk())    //返回的状态是200
-                .andDo(print())       //打印出请求和相应的内容
-                //.andReturn();
-                .andReturn().getResponse().getContentAsString();   //将相应的数据转换为字符串
-        //System.out.println("-----返回的json = " + responseString);
-    }
     @Test
     public void loginTest() throws Exception
     {

@@ -5,12 +5,25 @@
 
 <mapper namespace="rentCar.mappers.CustomerMapper">
     <resultMap type="rentCar.entity.CustomerInfo" id="customerMap">
-        <id property="" column="ID" />
-        <result property="username" column="USERNAME" />
-        <result property="password" column="PASSWORD" />
+            <id property="id" column="id" />
+            <result property="customerNo" column="customer_no" />
+            <result property="customerPassword" column="customer_password" />
+            <result property="customerName" column="customer_name" />
+            <result property="customerSex" column="customer_sex" />
+            <result property="customerAge" column="customer_age" />
+            <result property="customerId" column="customer_id" />
+            <result property="customerTel" column="customer_tel" />
+            <result property="customerWorkplace" column="customer_workplace" />
+            <result property="customerPost" column="customer_post" />
+            <result property="customerEmail" column="customer_email" />
+            <result property="customerStatus" column="customer_status" />
+            <result property="customerAddress" column="customer_address" />
+            <result property="recordCreator" column="record_creator" />
+            <result property="recordCreateTime" column="record_create_time" />
+
     </resultMap>
     <!-- 此处select标签的id值对应Mapper类中方法名 -->
-    <select id="getUserByNo" parameterType="string" resultType="rentCar.entity.CustomerInfo">
+    <select id="getUserByNo" parameterType="string" resultMap="customerMap">
         select * from customer_info where customer_no = #{customerNo}
     </select>
     <select id="queryIDByCustomerNo" parameterType="string" resultType="java.lang.String">
@@ -22,8 +35,13 @@
     <select id="queryPassWordById" parameterType="java.lang.String" resultType="java.lang.String">
         select PASSWORD from customer_info where id= #{id}
     </select>
-
-    <select id="findAll" resultType="rentCar.entity.CustomerInfo">
+    <select id="queryCustomerNameById" parameterType="java.lang.String" resultType="java.lang.String">
+        select customer_name from customer_info where id= #{id}
+    </select>
+    <select id="queryCustomerTelById" parameterType="java.lang.String" resultType="java.lang.String">
+        select customer_tel from customer_info where id= #{id}
+    </select>
+    <select id="findAll" resultMap="customerMap">
         select * from customer_info;
     </select>
 

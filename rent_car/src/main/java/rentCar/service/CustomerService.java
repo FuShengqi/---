@@ -15,5 +15,5 @@ public interface CustomerService {
     int updatePassword(String userName, String password);
     int login(String userName, String passWord);
     int register(HashMap infoMap);
-    public int register(CustomerInfo customerInfo);
+    int register(CustomerInfo customerInfo);
 }

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import rentCar.entity.CustomerInfo;
 import rentCar.service.CustomerService;
 
@@ -46,11 +47,6 @@ public class CustomerController {
             System.out.println("请求Service为" +customerService);
             BufferedReader br = req.getReader();
 
-        /*String str, wholeStr = "";
-        while((str = br.readLine()) != null){
-            wholeStr += str;
-        }
-        System.out.println(wholeStr);*/
             System.out.println("获取请求流："+br);
 
             String str, jsonString = "";
@@ -66,15 +62,6 @@ public class CustomerController {
 
             String userName1 = (String) req.getAttribute("userName");
             String passWord1 = (String) req.getAttribute("passWord");
-            // String content = (String) req.
-            // String userName = (String) user.getUserName("userName");
-            //String passWord = (String) req.getAttribute("passWord");
-
-            // JSONObject jsonObject= JSONObject.parseObject(jsonString);
-            // String userName = (String)jsonObject.get("userName");
-            // String passWord = (String) jsonObject.get("passWord");
-            //JSONObject jsonObject=JSONObject.
-            //System.out.println("请求的内容为" + req);
             String userName = req.getParameter("userName");
             String passWord = req.getParameter("passWord");
 
@@ -90,13 +77,6 @@ public class CustomerController {
             map.put("passWord",passWord);
             map.put("userName1",userName1);
             map.put("passWord1",passWord1);
-      /*  // 如果成功，还需要加上token
-        if (loginResult.getCode() == 0) {
-            Map<String, Object> dataMap = new HashMap<>();
-            dataMap.put("token", loginResult.getToken());
-
-            map.put("data", dataMap);
-        }*/
             resp.addHeader("Content-Type","application/json; charset=utf-8");
             resp.addHeader("Accept-Encoding","gzip");
             resp.setContentType("text/plain;charset=utf-8" );
@@ -105,17 +85,15 @@ public class CustomerController {
             String result = JSON.toJSONString(map);
 
             System.out.println("结果为" + result);
-            //resp.setCharacterEncoding("application/json;charset=utf-8");
             PrintWriter printWriter = resp.getWriter();
             printWriter.write(result);
-            //printWriter.write(result1);
-            //  printWriter.flush();
             printWriter.close();
 
         }
 
       /*
     注册实现，获取注册输入流，进行处理，返回注册结果。
+    注册时，生成订单。返回注册结果。
     */
         @RequestMapping(value = "/Register",method=RequestMethod.POST)
         public void register(HttpServletRequest req, HttpServletResponse resp) throws Exception {
@@ -162,6 +140,25 @@ public class CustomerController {
             printWriter.close();
 
         }
+
+    @RequestMapping(value = "/Register",method=RequestMethod.GET)
+    public ModelAndView register1(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+        System.out.println("注册请求为" + req);
+        System.out.println("请求registerService为" +customerService);
+        BufferedReader br = req.getReader();
+        System.out.println("获取注册请求流："+br);
+          String  carNo=req.getParameter("carNo");
+
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("client_information.jsp"); //返回的文件名
+        mav.addObject("carNo",carNo);
+        resp.addHeader("Content-Type","application/json; charset=utf-8");
+        resp.addHeader("Accept-Encoding","gzip");
+        resp.setContentType("text/plain;charset=utf-8" );
+        resp.setCharacterEncoding("UTF-8");
+        return mav;
+
+    }
 
     /*
     更改密码实现，获取输入流，进行处理，返回结果。
@@ -246,32 +243,7 @@ public class CustomerController {
 
         }
 
-        public String toString(){
-            String result=null;
-            InputStream inputStream = null;
-            //inputStream = responseBody.byteStream();
-            BufferedReader br = null;
-            br=new BufferedReader(new InputStreamReader(inputStream));
-            String string =null;
-            StringBuilder sb = new StringBuilder();
-            String line = null;
-            try {
-                while ((line = br.readLine()) != null) {
-                    sb.append(line + "\n");
-                }
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    inputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            string=sb.toString();
-            return string;
-        }
     }
 
 

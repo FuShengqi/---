@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import rentCar.entity.CustomerInfo;
 import rentCar.mappers.CustomerMapper;
 import rentCar.mappers.StuffMapper;
+import rentCar.util.IdFactory;
 
 import javax.annotation.Resource;
 import java.sql.Connection;
@@ -19,6 +20,7 @@ import java.util.*;
 @Transactional
 public class CustomerServiceImpl implements CustomerService {
     private int result = -1;
+    private IdFactory idFactory = new IdFactory();
 @Resource
 private CustomerMapper customerMapper;
     @Resource
@@ -78,12 +80,12 @@ private CustomerMapper customerMapper;
             System.out.println("用户已存在!");
             return result;
         }else{
-            String  ID=getUUID();
+            String  ID=idFactory.getUUID();
             System.out.println("用户未存在，开始注册!");
             recordCreator = stuffMapper.queryIDByStuffNo(recordCreator);
             infoMap.put("id",ID);
-            infoMap.put("stuffNo",getCustomerNo());
-            infoMap.put("recordCreateTime",getCurrentTime());
+            infoMap.put("customerNo",getCustomerNo());
+            infoMap.put("recordCreateTime",idFactory.getCurrentTime());
             infoMap.put("recordCreator",recordCreator);
             customerMapper.insertCustomerMap(infoMap);
             //userMapper.insertUserAuto(userName,passWord);  //错误
@@ -104,11 +106,11 @@ private CustomerMapper customerMapper;
             System.out.println("用户已存在!");
             return result;
         }else{
-            String  ID=getUUID();
+            String  ID=idFactory.getUUID();
             customerInfo.setId(ID);
             customerInfo.setCustomerNo(getCustomerNo());
-            customerInfo.setRecordCreateTime(getCurrentTime());
-            System.out.println("当前时间："+getCurrentTime());
+            customerInfo.setRecordCreateTime(idFactory.getCurrentTime());
+            System.out.println("当前时间："+idFactory.getCurrentTime());
             System.out.println("用户未存在，开始注册!");
             customerMapper.insertCustomer(customerInfo);
             //userMapper.insertUserAuto(userName,passWord);  //错误
@@ -157,18 +159,7 @@ private CustomerMapper customerMapper;
         return result;
     }
 
-    /*
-   生成每个用户注册时的唯一ID,UUID
-   */
-    public String getUUID(){
-        UUID uuid = UUID.randomUUID();
-        String str = uuid.toString();
-        // 去掉"-"符号
-        String temp = str.substring(0, 8) + str.substring(9, 13) + str.substring(14, 18) + str.substring(19, 23) + str.substring(24);
-        System.out.println("此次注册的UUID结果为"+str+","+temp);
-        return  temp;
-    }
-  /*
+     /*
    生成每个用户注册时的唯一编号
        客户编号=注册顺序码(6位，例：000001)
    */
@@ -177,32 +168,5 @@ private CustomerMapper customerMapper;
         String customerNo="";
         customerNo=customerMapper.count().toString();
         return  customerNo;
-    }
-    /*
-    获取用户注册的时间,即当前时刻系统的时间。
-    */
-    public String getCurrentTime1(){
-        String time="";
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
-
-        Calendar c = Calendar.getInstance();//可以对每个时间域单独修改
-
-        int year = c.get(Calendar.YEAR);
-        int month = c.get(Calendar.MONTH);
-        int date = c.get(Calendar.DATE);
-        int hour = c.get(Calendar.HOUR_OF_DAY);
-        int minute = c.get(Calendar.MINUTE);
-        int second = c.get(Calendar.SECOND);
-        System.out.println(year + "/" + month + "/" + date + " " +hour + ":" +minute + ":" + second);
-        return time;
-    }
-
-    /*
-   获取用户注册的时间,即当前时刻系统的时间。
-   */
-    public Date getCurrentTime(){
-        java.sql.Date currentDate = new java.sql.Date(System.currentTimeMillis());
-        return currentDate;
     }
 }
